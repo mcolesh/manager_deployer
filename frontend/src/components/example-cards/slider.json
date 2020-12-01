@@ -1,0 +1,59 @@
+{
+	"name": "slider",
+	"display": "Slider",
+	"description": "Select a number from a defined discrete range",
+	"sections": [
+		{
+			"name": "Slider",
+			"display": "Slider",
+			"description": "Slider Options",
+			"subSections": [
+				{
+					"name": "Slider_Sub1",
+					"display": "Slider field:",
+					"fields": [
+						{
+							"data": "Slider Properties:\n⦿help – explain input pattern and purpose. can be displayed on ❔ button click\n⦿default – This is the default value of the slider. This will appear on the slider when page loads, if not set initial value is set to (minimum + maximum)/2 \n⦿range – The minimum and maximum values of the slider. By default set to 0 and 100 respectively\n⦿stepBy - Amount that the value of the input will increment by. By default this is set to 1.\n⦿readonly – If true, the slider won’t be functional and it will be greyed out\n⦿showIf - reveal/hide fields according to switch state, for more information go to the ShowIf example",
+							"display": "Slider properties",
+							"name": "info_msg_slider_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"readonly": false,
+							"display": "Slider (Standard)",
+							"help": "Slider with a default value of 50 and a range of 0 to 100",
+							"name": "Slider_Sub1_Slider1",
+							"type": "slider"
+						},
+						{
+							"default": 10,
+							"range": { "min": 0, "max": 50 },
+							"stepBy": 10,
+							"readonly": false,
+							"display": "Slider (Custom)",
+							"help": "Slider with a default value of 10, a range of 0 to 50 and step size of 10",
+							"name": "Slider_Sub1_Slider2",
+							"type": "slider"
+						},
+						{
+							"default": 42,
+							"range": { "min": 0, "max": 90 },
+							"readonly": true,
+							"display": "Slider (ReadOnly)",
+							"help": "Slider with a fixed value of 42 and range of 0 to 90",
+							"name": "Slider_Sub1_Slider3",
+							"type": "slider"
+						},
+						{
+							"name": "editor_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"readonly\": false,\r\n  \"display\": \"Slider (Standard)\",\r\n  \"help\": \"Slider with a default value of 50 and a range of 0 to 100\",\r\n  \"name\": \"Slider_Sub1_Slider1\",\r\n  \"type\": \"slider\"\r\n},\r\n{\r\n  \"default\": 10,\r\n  \"range\": { \"min\" : 0, \"max\": 50},\r\n  \"stepBy\": 10,\r\n  \"readonly\": false,\r\n  \"display\": \"Slider (Custom)\",\r\n  \"help\": \"Slider with a default value of 10, a range of 0 to 50 and step size of 10\",\r\n  \"name\": \"Slider_Sub1_Slider2\",\r\n  \"type\": \"slider\"\r\n},\r\n{\r\n  \"default\": 42,\r\n  \"range\": { \"min\" : 0, \"max\": 90},\r\n  \"readonly\": true,\r\n  \"display\": \"Slider (ReadOnly)\",\r\n  \"help\": \"Slider with a fixed value of 42 and range of 0 to 90\",\r\n  \"name\": \"Slider_Sub1_Slider3\",\r\n  \"type\": \"slider\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

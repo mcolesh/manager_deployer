@@ -1,0 +1,116 @@
+export const LOGIN_401_ERROR =
+	'Unable to log you in. Either your user name or password is incorrect.';
+export const LOGIN_500_ERROR = 'The server is temporarily unavailable.Please try again later';
+export const LOGIN_404_ERROR = 'The URL you provided was not found';
+export const LOGIN_GENERAL_ERROR = 'General Error. Please try again later';
+export const EMPTY = 'Field is empty';
+export const REQUIRED = 'Field is required';
+export const DUPLICATE = 'Value already exists';
+export const REGEX = 'Regex invalid';
+export const ASSIGNMENT_WARNING =
+	'The Host Groups will only be enabled for assignment when all the above entities are configured';
+export const FILES_STILL_UPLOADING =
+	'Some files are still uploading to the' +
+	' server. After they will be uploaded, you can click the deploy button';
+export const MAIN_PAGE_TITLE = 'Cloud Operations';
+export const NO_PLUGINS = 'No Plugins Installed';
+export const ADD_PLUGIN = 'Add Plugin';
+export const SHOW_HELP_TOOLTIP = 'Show Help';
+export const HELP = 'Help';
+export const HELP_DESCRIPTION = 'Select a form item to show help';
+export const IMPORT_TOOLTIP = 'Import Configuration';
+export const EXPORT_LABEL = 'Export Configuration';
+export const RESET_TOOLTIP = 'Reset Form';
+export const DEPLOY = 'DEPLOY';
+export const DEPLOY_TOOLTIP = 'Deploy';
+export const DEPLOY_BUTTON_TOOLTIP = 'View Deployment json';
+export const DEPLOY_DIALOG_TITLE = 'Deployment JSON';
+export const EXTERNAL_TOOLS = 'EXTERNAL TOOLS';
+export const ADD = 'Add';
+export const PROGRESS = 'Progress';
+export const OPEN = 'Open';
+export const ADD_ZONE = 'New Zone';
+export const ADD_ZONE_BMC = 'New Label';
+export const ZONE_WITHOUT_PULL_INFO = `Enter availability zone names.`;
+export const ZONE_WITH_PULL_INFO = `Enter availability zone names. for each availability zone, define a VM pool from the following dropdown list, The VMs, which belong to nodes (which are defined to a specific availability zone) will be attached to the chosen pool.`;
+export const SHOW_LOG = 'Show Log';
+export const SHOW_REPORT = 'Show Report';
+export const REPORT_ERROR = 'Report has errors, see log for details';
+export const PLUGIN_UPLOAD_ERROR = 'Plugin install error';
+export const SEARCH_NEXT_TOOLTIP = 'Next';
+export const SEARCH_BACK_TOOLTIP = 'Back';
+export const CLEAR_SEARCH_TOOLTIP = 'Clear Search';
+export const OVERLAPPED_RANGES_ERROR = 'Overlapped Ranges';
+export const MIN_ERROR = 'min';
+export const MAX_ERROR = 'max';
+export const MIN_ERROR_MESSAGE = 'Field is below required minimum';
+export const MAX_ERROR_MESSAGE = 'Field is above required maximum';
+export const REQUIRED_ERROR = 'Required';
+export const WRONG_RANGES_ERROR = 'Wrong Ranges';
+export const DEFAULT_LOG_DATA_TEXT = '...';
+export const REJECTED_FILE_TYPE_ERROR_MSG = 'Only * {0} files are allowed';
+export const REJECTED_FILE_MAX_ERROR_MSG = 'File size exceeds limit of';
+export const REQUIRED_VALIDATOR = 'Required';
+export const SOMETHING_WRONG = `Something went wrong.`;
+export const TRY_REFRESH = `Try refreshing this page.`;
+export const REFRESH_PAGE = `Refresh Page`;
+export const SENTRY_SNACKBAR_MESSAGE = `Debug mode is on, Logs will be send to Nokia's monitoring system`;
+export const REPORT_FEEDBACK = `Report feedback`;
+export const PAGE_DEPENDENCIES_NOT_READY_MSG = "Wizard can't be opened at this time, try later";
+export const INVALID_IPS = 'Invalid IPs';
+export const RESTART_SERVER_SERVICES_TITLE = 'Restart Server';
+export const RESTART_SERVER_TITLE = 'Rebooting Server Node';
+export const PROCEED = 'Proceed';
+export const OK = 'OK';
+export const NO_PROCCESSES_MESSAGE =
+	'No Processes are running on the server.\nDo you want to Proceed?';
+export const RESTART_CONFIRMATION_MSG = 'Are you Sure you want to restart?';
+export const RESTART_SERVER_ERROR_MSG = `Error while trying to restart the server`;
+export const RESTART_SERVER_ALERT_MSG = 'CBIS-Manager is restarting... Please wait...';
+export const GENERAL_ERROR = 'General Error';
+export const GET_RUNNING_PROCCESSES_ERROR_MSG = `Error while trying to get the running processes from the server`;
+export const FETCH_PREREQUISITES_ERROR_MSG = `Error while requesting the page prerequisites`;
+export const ADD_RACK = 'New Rack';
+export const NO_MORE_DISKS_TO_ASSIGN = 'No more nodes to assign';
+export const NO_MORE_DEVICES_TO_ASSIGN = 'No more devices to assign';
+export const NO_MORE_IPS_TO_ASSIGN = 'No more ips to assign';
+export const PAGES_ERROR = 'Wrong json response while fetching the pages';
+export const IMPORT_ERROR = 'Error occurred while importing file';
+export const DELETE_SUBSECTION_WARNING_MESSAGE = (name, dependentFields) =>
+	`Removing ${name} instance will affect the following fields:\n${dependentFields}`;
+export const DELETE_SUBSECTION_WARNING_MESSAGE_SECOND_TEXT = 'are you sure you want to delete it?';
+export const SECTION_IS_EMPTY_ERROR_MESSAGE = (items, values) =>
+	`${items} or ${values} sections appear to be empty, please add each at least one instance`;
+export const LABEL = 'Label';
+export const ZONE = 'Zone';
+export const CANCEL = 'CANCEL';
+export const DOWNLOAD = 'DOWNLOAD';
+export const IGNORE = 'IGNORE';
+export const ENABLE_POOL_MSG = `In order to enable Multiple Pools, you need to disable 'Fast pool' in Customize Host Group of 'Storage' type (Enable ceph fast pool)`;
+export const ENABLE_POOL_MSG_WITH_RACKS = `Racks must be disabled to enable Multiple Pools`;
+export const LOG_FILE_SIZE_ALERT_MSG_TEXT1 = `Log exceeds size limit of `;
+export const LOG_FILE_SIZE_ALERT_MSG_TEXT2 = `To inspect log file click the download button`;
+export const SERVER_NOTIFICATION = 'server-notification';
+export const NO = 'NO';
+export const YES = 'YES';
+export const IMPORT_JSON_WARNING_MSG =
+	'Imported file has invalid values, Do you still want to try import it?\n \n';
+export const OPEN_WIZARD_JSON_WARNING_MSG =
+	'Form has invalid values, Do you still want to open it ?\n \n';
+export const SUBSECTION_ALREADY_EXISTS = (name) => `Name ${name} already exists`;
+export const PRODUCT_NAME = 'CloudBand Infrastructure Software Manager Deployer';
+export const TERMS_CONDITIONS = 'Terms and Conditions';
+export const DEFAULT_PRODUCT_TITLE = 'CBIS Manager';
+export const ABOUT_PRODUCT_TEXT_LINE = 'About Product ...';
+export const IMPORT_ERROR_MSG = (data) =>
+	`Imported file have the following unmatched prerequisite :\n${data}`;
+export const INVALID_URL = 'Invalid URL';
+export const IMPORT_ERROR_LABEL = 'IMPORT_ERROR_LABEL';
+export const DELETE_SUBSECTION_WARNING = 'DELETE_SUBSECTION_WARNING';
+export const IMPORT_WARNING = 'IMPORT_WARNING';
+export const ADD_SUBSECTION_DIALOG = 'ADD_SUBSECTION_DIALOG';
+export const EXPORT_ICON_LABEL = 'Export';
+export const IMPORT_ICON_LABEL = 'Import';
+export const RESET_ICON_LABEL = 'Reset';
+export const DEPLOY_ICON_LABEL = 'Deploy';
+export const DUPLICATE_KEY_ERROR = 'Duplicate key found';

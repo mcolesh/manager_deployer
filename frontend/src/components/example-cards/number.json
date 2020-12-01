@@ -1,0 +1,81 @@
+{
+	"name": "number",
+	"display": "Input element for numbers",
+	"description": "Input field for numbers with +/- buttons to increment/decrement operations",
+	"sections": [
+		{
+			"name": "number",
+			"display": "Number",
+			"description": "Number Options",
+			"subSections": [
+				{
+					"name": "Number_Sub1",
+					"display": "Number field properties:",
+					"fields": [
+						{
+							"data": "Number field properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed) \n⦿restrictions - provide min or/and max values to restrict user input \n⦿step - provide The increment the value will increase/decrease when the +/- buttons are pressed",
+							"display": "Number props",
+							"name": "info_msg_number_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": 10,
+							"display": "Number with restrictions",
+							"help": "Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. field value should be between 10 and 80 with default step value 1 because step not set",
+							"name": "number_with_restrictions",
+							"required": true,
+							"restrictions": {
+								"min": 10,
+								"max": 80
+							},
+							"type": "number"
+						},
+						{
+							"default": 0.0,
+							"display": "Number with step",
+							"help": "Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. field value should be between 0 and 1 with step 0.1",
+							"name": "number_with_step",
+							"required": true,
+							"step": 0.1,
+							"restrictions": {
+								"min": 0.0,
+								"max": 1
+							},
+							"type": "number"
+						},
+						{
+							"display": "Not required Number",
+							"help": "Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. value can be empty",
+							"name": "not_required_number",
+							"required": false,
+							"type": "number"
+						},
+						{
+							"display": "Required Number",
+							"help": "Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. value must not be empty",
+							"name": "required_number",
+							"required": true,
+							"type": "number"
+						},
+						{
+							"default": 35,
+							"display": "Read Only Number",
+							"help": "Read Only Number is a preseted readonly field with the value of 35. for readonly input field it is preferdable to use text fields, for more information see input fields example",
+							"name": "read_only_number",
+							"required": true,
+							"readonly": true,
+							"type": "number"
+						},
+						{
+							"name": "number_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"default\": 10,\r\n  \"display\": \"Number with restrictions\",\r\n  \"help\": \"Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. field value should be between 10 and 80\",\r\n  \"name\": \"number_with_restrictions\",\r\n  \"required\": true,\r\n  \"restrictions\": {\r\n    \"min\": 10,\r\n    \"max\": 80\r\n  },\r\n  \"type\": \"number\"\r\n},\r\n\r\n  \"default\": 0.0,\r\n  \"display\": \"Number with step\",\r\n  \"help\": \"Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. field value should be between 0 and 1 with step 0.1\",\r\n  \"name\": \"number_with_step\",\r\n  \"required\": true,\r\n  \"restrictions\": {\r\n    \"min\": 0.0,\r\n    \"max\": 1\r\n  },,\r\n  \"step\": 0.1\r\n  \"type\": \"number\"\r\n},\r\n{\r\n  \"display\": \"Not required Number\",\r\n  \"help\": \"Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. value can be empty\",\r\n  \"name\": \"not_required_number\",\r\n  \"required\": false,\r\n  \"type\": \"number\"\r\n},\r\n{\r\n  \"display\": \"Required Number\",\r\n  \"help\": \"Click the +/- buttons to increment/decrement respectively or enter the required value in the input field. value must not be empty\",\r\n  \"name\": \"required_number\",\r\n  \"required\": true,\r\n  \"type\": \"number\"\r\n},\r\n{\r\n  \"default\": 35,\r\n  \"display\": \"Read Only Number\",\r\n  \"help\": \"Read Only Number is a preseted readonly field with the value of 35. for readonly input field it is preferdable to use text fields, for more information see input fields example\",\r\n  \"name\": \"read_only_number\",\r\n  \"required\": true,\r\n  \"readonly\": true,\r\n  \"type\": \"number\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

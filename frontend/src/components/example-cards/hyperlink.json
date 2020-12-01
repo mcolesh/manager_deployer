@@ -1,0 +1,50 @@
+{
+	"name": "hyperlink",
+	"display": "component for hyperlinks",
+	"description": "component to show/open hyperlinks",
+	"sections": [
+		{
+			"name": "hyperlink",
+			"display": "HyperLink",
+			"description": "HyperLink Options",
+			"subSections": [
+				{
+					"name": "hyperlink_sub",
+					"display": "HyperLink properties:",
+					"fields": [
+						{
+							"data": "HyperLink properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿dispaly - the label text\n⦿text - if exist will show link text, else will show the url itself\n⦿toolTip - tooltip will render onHover/onEnter",
+							"display": "HyperLink props",
+							"name": "info_msg_hyperlink_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "NewTab Link",
+							"text": "Nokia newTab text",
+							"help": "Hyperlink will always open on new tab",
+							"name": "newTab_link",
+							"url": "https://nokia.com",
+							"type": "hyperlink"
+						},
+						{
+							"display": "Tooltip Link",
+							"text": "Nokia tooltip text",
+							"help": "You can show tooltip onHover/onEnter",
+							"name": "tooltip_link",
+							"toolTip": true,
+							"url": "https://nokia.com",
+							"type": "hyperlink"
+						},
+						{
+							"name": "hyperlink_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"NewTab Link\",\r\n  \"text\": \"Nokia newTab text\",\r\n  \"help\": \"Hyperlink will always open on new tab\",\r\n  \"name\": \"newTab_link\",\r\n  \"url\": \"https://nokia.com\",\r\n  \"type\": \"hyperlink\"\r\n},\r\n{\r\n  \"display\": \"Tooltip Link\",\r\n  \"text\": \"Nokia tooltip text\",\r\n  \"help\": \"You can show tooltip onHover/onEnter\",\r\n  \"name\": \"tooltip_link\",\r\n  \"toolTip\": true,\r\n  \"url\": \"https://nokia.com\",\r\n  \"type\": \"hyperlink\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

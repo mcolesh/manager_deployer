@@ -1,0 +1,72 @@
+{
+	"name": "textarea",
+	"display": "Input element for textareas",
+	"description": "Input field for textareas that is best suited for larger amounts of text.",
+	"sections": [
+		{
+			"name": "textarea",
+			"display": "Textarea",
+			"description": "Textarea Options",
+			"subSections": [
+				{
+					"name": "Textarea_sub",
+					"display": "Textarea field properties:",
+					"fields": [
+						{
+							"data": "Textarea field properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - prevent input to be editable\n⦿required - when set to ture, input must be provided (empty string is not allowed) \n⦿restrictions - provide maxCharCount value to limit the number of chars for the TextArea.\n⦿placeholder - Disappears on user input",
+							"display": "Textarea props",
+							"name": "info_msg_textarea_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "Regex Example",
+							"default": "Click the help button to reveal field's pattern",
+							"help": "Regex Example input should start with 'Textarea-1' followed by one letter",
+							"name": "textarea_regex",
+							"required": true,
+							"type": "textarea",
+							"validation": "^Textarea-1[A-Za-z]+"
+						},
+						{
+							"display": "Not Required Example",
+							"default": "You don't have to fill me",
+							"help": "Not Required Example is not a mandatory field, hence, it can be sumbited empty",
+							"name": "textarea_not_required",
+							"type": "textarea"
+						},
+						{
+							"display": "Readonly Example",
+							"default": "Some fixed input",
+							"help": "Readonly Example is a disabled, presetted field",
+							"name": "textarea_readonly",
+							"readonly": true,
+							"type": "textarea"
+						},
+						{
+							"display": "MaxCharCount Example",
+							"default": "Some input with maxCharCount 300",
+							"help": "MaxCharCount Example input should not exceed 300 chars",
+							"name": "textarea_maxCharCount",
+							"maxCharCount": 300,
+							"type": "textarea"
+						},
+						{
+							"display": "Placeholder Example",
+							"help": "Placeholder Example has placeholder field",
+							"name": "textarea_placeholder",
+							"placeholder": "this placeholder will disappear on user input",
+							"type": "textarea"
+						},
+						{
+							"name": "textarea_field_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"Regex Example\",\r\n  \"default\": \"Click the help button to reveal field's pattern\",\r\n  \"help\": \"Regex Example input should start with 'Textarea-1' followed by one letter\",\r\n  \"name\": \"textarea_regex\",\r\n  \"required\": true,\r\n  \"type\": \"textarea\",\r\n  \"validation\": \"^Textarea-1[A-Za-z]+\"\r\n},\r\n{\r\n  \"display\": \"Not Required Example\",\r\n  \"default\": \"You don't have to fill me\",\r\n  \"help\": \"Not Required Example is not a mandatory field, hence, it can be sumbited empty\",\r\n  \"name\": \"textarea_not_required\",\r\n  \"type\": \"textarea\"\r\n},\r\n{\r\n  \"display\": \"Readonly Example\",\r\n  \"default\": \"Some fixed input\",\r\n  \"help\": \"Readonly Example is a disabled, presetted field\",\r\n  \"name\": \"textarea_readonly\",\r\n  \"readonly\": true,\r\n  \"type\": \"textarea\"\r\n},\r\n{\r\n  \"display\": \"MaxCharCount Example\",\r\n  \"default\": \"Some input with maxCharCount 300\",\r\n  \"help\": \"MaxCharCount Example input should not exceed 300 chars\",\r\n  \"name\": \"textarea_maxCharCount\",\r\n  \"maxCharCount\": 300,\r\n  \"type\": \"textarea\"\r\n},\r\n{\r\n  \"display\": \"Placeholder Example\",\r\n  \"help\": \"Placeholder Example has placeholder field\",\r\n  \"name\": \"textarea_placeholder\",\r\n  \"placeholder\": \"this placeholder will disappear on user input\",\r\n  \"type\": \"textarea\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

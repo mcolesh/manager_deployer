@@ -1,0 +1,58 @@
+{
+	"name": "genericSelect",
+	"display": "Generic Select",
+	"description": "Generic Select",
+	"sections": [
+		{
+			"name": "generic_select",
+			"display": "Generic Select",
+			"description": "Generic Select",
+			"subSections": [
+				{
+					"name": "Generic_Select_Sub1",
+					"display": "Generic Select properties:",
+					"fields": [
+						{
+							"data": "Generic Select properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display (mandatory here)\n⦿nameReadOnly - disable name label\n⦿required - when set to true, input must be provided",
+							"display": " props",
+							"name": "info_msg_generic_select_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": [
+								{
+									"name": "select-1-label",
+									"value": "value1"
+								},
+								{
+									"name": "select-2-label",
+									"value": "value2"
+								},
+								{
+									"name": "select-3-label",
+									"value": "value3"
+								}
+							],
+							"display": "Generic Select (mandatory)",
+							"help": "Count of select fields will depend on count of object inside default.",
+							"name": "generic_select_mandatory",
+							"nameReadOnly": true,
+							"required": true,
+							"type": "generic-select",
+							"validation": "^[A-Z:a-z0-9_-]+$",
+							"validationDescription": "Only alphabet, numeric, ':', '_' and '-' are allowed ",
+							"values": ["none", "value1", "value2", "value3"]
+						},
+						{
+							"name": "generic_select_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\n\t\"default\": [\n\t\t{\n\t\t\t\"name\": \"select-1-label\",\n\t\t\t\"value\": \"value1\"\n\t\t},\n\t\t{\n\t\t\t\"name\": \"select-2-label\",\n\t\t\t\"value\": \"value2\"\n\t\t},\n\t\t{\n\t\t\t\"name\": \"select-3-label\",\n\t\t\t\"value\": \"value3\"\n\t\t}\n\t], \n\t\"validation\": \"^[A-Z:a-z0-9_-]+$\",\n\t\"display\": \"Generic Select (mandatory)\",\n\t\"name\": \"generic_select_mandatory\",\n\t\"type\": \"generic-select\"\n\t\"nameReadOnly\": true,\n\t\"required\": true,\n\t\"values\": [\n\t\"none\",\n\t\"value1\",\n\t\"value2\",\n\t\"value3\"\n\t]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

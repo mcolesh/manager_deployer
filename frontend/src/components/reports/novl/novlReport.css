@@ -1,0 +1,12 @@
+.csfWidgets.formLayout.formLayout {
+	max-width: unset;
+	background: #f4f4f4;
+}
+
+#left-cell {
+	border-left: 2px solid #dbdbdb;
+}
+
+.csf-material-grid {
+	width: 100%;
+}

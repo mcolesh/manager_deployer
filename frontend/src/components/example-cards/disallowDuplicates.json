@@ -1,0 +1,61 @@
+{
+	"name": "disallowDuplicates",
+	"display": "Disallow duplicates in lists",
+	"description": "Disallow duplicates in specific lists",
+	"sections": [
+		{
+			"description": "Disallow duplicates in lists",
+			"display": "Disallow duplicates in lists Options",
+			"name": "disallow_duplicates",
+			"subSections": [
+				{
+					"name": "disallow_duplicates_list",
+					"display": "Source list and disallow duplicates list",
+					"fields": [
+						{
+							"data": "This feature give the user the ability to have a validation message, if he enters a value in a list that already exist in another list. \ndata source properties for collection chips: \n⦿disallowDuplicates - parent fields name which the current field (data source) will filter all item that are already duplicates from the other lists \n",
+							"display": "Prop Types",
+							"name": "info_msg_disallow_duplicates",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": ["/dev/a", "/dev/b", "/dev/c", "/dev/d", "/dev/e"],
+							"disallowDuplicates": [
+								"disallow_duplicates.disallow_duplicates_list.list-1",
+								"disallow_duplicates.disallow_duplicates_list.list-2"
+							],
+							"display": "Source list",
+							"name": "source_list",
+							"required": true,
+							"type": "host-list",
+							"validation": "^[A-Za-z0-9/]*$"
+						},
+						{
+							"default": ["/dev/e", "/dev/f"],
+							"display": "List-1",
+							"name": "list-1",
+							"required": true,
+							"type": "host-list",
+							"validation": "^[A-Za-z0-9/]*$"
+						},
+						{
+							"default": ["/dev/d", "/dev/e"],
+							"display": "List-2",
+							"name": "list-2",
+							"required": true,
+							"type": "host-list",
+							"validation": "^[A-Za-z0-9/]*$"
+						},
+						{
+							"name": "disallow_duplicates_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"Source list\",\r\n  \"disallowDuplicates\": [\"disallow_duplicates.disallow_duplicates_list.list-1\", \"disallow_duplicates.disallow_duplicates_list.list-2\"],\r\n  \"name\": \"source_list\",\r\n  \"required\": true,\r\n  \"type\": \"host-list\",\r\n  \"validation\": \"^[A-Za-z0-9/]*$ ,\"\r\n  \"default\": [\"/dev/a\", \"/dev/b\", \"/dev/c\", \"/dev/d\", \"/dev/e\"]\r\n},\r\n{\r\n  \"display\": \"List-1\",\r\n  \"name\": \"list-1\",\r\n  \"required\": true,\r\n  \"type\": \"host-list\",\r\n  \"validation\": \"^[A-Za-z0-9/]*$ ,\"\r\n  \"default\": [\"/dev/e\", \"/dev/f\"]\r\n},\r\n{\r\n  \"display\": \"List-2\",\r\n  \"name\": \"list-2\",\r\n  \"required\": true,\r\n  \"type\": \"host-list\",\r\n  \"validation\": \"^[A-Za-z0-9/]*$ ,\"\r\n  \"default\": [\"/dev/d\", \"/dev/e\"]\r\n},\r\n"
+						}
+					]
+				}
+			]
+		}
+	]
+}

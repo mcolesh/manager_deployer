@@ -1,0 +1,66 @@
+{
+	"name": "switch",
+	"display": "Switch",
+	"description": "Toggle switch (on/off button)",
+	"sections": [
+		{
+			"name": "Switch",
+			"display": "Switch",
+			"description": "Switch Options",
+			"subSections": [
+				{
+					"name": "Switch_Sub1",
+					"display": "Switch field:",
+					"fields": [
+						{
+							"data": "Switch Properties:\n⦿help - explain tougle switch purpose. can be displayed on ❔ button click\n⦿default - Initial state of the tougle switch. Value of true turns switch on upon initial display\n⦿readonly - disable the toggle switch \n⦿showIf - reveal/hide fields according to switch state, for more information go to the ShowIf example ",
+							"display": "Switch properties",
+							"name": "info_msg_switch_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": true,
+							"display": "Field-1",
+							"help": "Here you can explain about field-1 and why it's enabled by default",
+							"name": "Switch_Sub1_Field1",
+							"type": "boolean"
+						},
+						{
+							"default": false,
+							"display": "Field-2",
+							"help": "Here you can explain about field-2 and why it's a disabled, readonly field",
+							"name": "Switch_Sub1_Field2",
+							"readonly": true,
+							"type": "boolean"
+						},
+						{
+							"default": false,
+							"display": "Field-3",
+							"help": "Enable me to reveal Field-4",
+							"name": "Switch_Sub1_Field3",
+							"type": "boolean"
+						},
+						{
+							"default": "",
+							"display": "Field-4",
+							"help": "Field-4 depends on Field-3 state",
+							"name": "Switch_Sub1_Field4",
+							"type": "text",
+							"showIf": {
+								"parentName": "Switch_Sub1_Field3",
+								"parentValue": true
+							}
+						},
+						{
+							"name": "switch_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n   \"default\": true,\r\n   \"display\": \"Field-1\",\r\n   \"help\": \"Here you can explain about field-1 and why it's enabled by default\",\r\n   \"name\": \"Switch_Sub1_Field1\",\r\n   \"type\": \"boolean\"\r\n},\r\n{\r\n   \"default\": false,\r\n   \"display\": \"Field-2\",\r\n   \"help\": \"Here you can explain about field-2 and why it's a disabled, readonly field\",\r\n   \"name\": \"Switch_Sub1_Field2\",\r\n   \"readonly\": true,\r\n   \"type\": \"boolean\"\r\n},\r\n{\r\n   \"default\": false,\r\n   \"display\": \"Field-3\",\r\n   \"help\": \"Enable me to reveal Field-4\",\r\n   \"name\": \"Switch_Sub1_Field3\",\r\n   \"type\": \"boolean\"\r\n},\r\n{\r\n   \"default\": \"\",\r\n   \"display\": \"Field-4\",\r\n   \"help\": \"Field-4 depends on Field-3 state\",\r\n   \"name\": \"Switch_Sub1_Field4\",\r\n   \"type\": \"text\",\r\n   \"showIf\":  {\r\n    \"parentName\" : \"Switch_Sub1_Field3\",\r\n    \"parentValue\": true\r\n    }\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

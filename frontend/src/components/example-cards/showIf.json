@@ -1,0 +1,622 @@
+{
+	"name": "showIf",
+	"display": "ShowIf",
+	"description": "Forms of ShowIf",
+	"sections": [
+		{
+			"description": "Show field according to parent value",
+			"display": "Legacy showIf",
+			"name": "legacy_showIf",
+			"subSections": [
+				{
+					"name": "simple_showIf",
+					"display": "Simple ShowIf",
+					"fields": [
+						{
+							"data": "ShowIf properties: \n⦿parentName - parent field name which the current field relies on (must be included in the json)  \n ⦿parentValue -  value of the parent field \n⦿operamds - chose among (and/or/not) based on the requirements (default : 'or')",
+							"display": "Properties",
+							"name": "info_msg_showIf",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": "text1",
+							"display": "Parent Field",
+							"help": "Text Field performing the parent in ShowIf",
+							"name": "showIf_parent",
+							"type": "text",
+							"validation": "^[A-Za-z0-9_-]+$"
+						},
+						{
+							"default": true,
+							"display": "Dependent Field-1",
+							"help": "Field's visibility depends on 'Parent Field' value",
+							"name": "dependent_field_1",
+							"showIf": {
+								"parentName": "showIf_parent",
+								"parentValue": "text2"
+							},
+							"type": "boolean"
+						},
+						{
+							"default": "1.1.1.1,1.1.1.2",
+							"display": "Dependent Field-2",
+							"help": "Field's visibility depends on 'Parent Field' value",
+							"name": "dependent_field_2",
+							"showIf": {
+								"parentName": "showIf_parent",
+								"parentValue": "text3"
+							},
+							"type": "ip-list"
+						},
+						{
+							"name": "simple_showIf_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n    \"default\": \"text1\",\r\n    \"display\": \"Parent Field\",\r\n    \"help\": \"Text Field performing the parent in ShowIf\",\r\n    \"name\": \"showIf_parent\",\r\n    \"type\": \"text\",\r\n    \"validation\": \"^[A-Za-z0-9_-]+$\"\r\n},\r\n{\r\n    \"default\": true,\r\n    \"display\": \"Dependent Field-1\",\r\n    \"help\": \"Field's visibility depends on 'Parent Field' value\",\r\n    \"name\": \"dependent_field_1\",\r\n    \"showIf\": {\r\n        \"parentName\": \"showIf_parent\",\r\n        \"parentValue\": \"text2\"\r\n    },\r\n    \"type\": \"boolean\"\r\n},\r\n{\r\n    \"default\": \"1.1.1.1,1.1.1.2\",\r\n    \"display\": \"Dependent Field-2\",\r\n    \"help\": \"Field's visibility depends on 'Parent Field' value\",\r\n    \"name\": \"dependent_field_2\",\r\n    \"showIf\": {\r\n        \"parentName\": \"showIf_parent\",\r\n        \"parentValue\": \"text3\"\r\n    },\r\n    \"type\": \"ip-list\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "nested_showIf",
+					"display": "Nested ShowIf",
+					"fields": [
+						{
+							"default": 7,
+							"range": { "min": 0, "max": 10 },
+							"stepBy": 1,
+							"readonly": false,
+							"display": "Slider Field (first parent)",
+							"help": "Slider performing the first dependency",
+							"name": "nested_showIf_parent1",
+							"type": "slider"
+						},
+						{
+							"default": 10,
+							"display": "Number Field (second parent)",
+							"help": "Number Field, depends on the Slider to be visible and performes a nested parent dependency for nested_showIf_field",
+							"name": "nested_showIf_parent2",
+							"type": "number",
+							"showIf": {
+								"parentName": "nested_showIf_parent1",
+								"parentValue": 8
+							}
+						},
+						{
+							"default": "option1",
+							"display": "Select Field (nested showIf)",
+							"help": "Select Field, visible only when the number field value becomes 5",
+							"name": "nested_showIf_field",
+							"type": "select",
+							"showIf": {
+								"parentName": "nested_showIf_parent2",
+								"parentValue": 5
+							},
+							"values": ["option1", "option2", "option3"]
+						},
+						{
+							"name": "nested_showIf_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n    \"default\": 7,\r\n    \"range\": { \"min\": 0, \"max\": 10 },\r\n    \"stepBy\": 1,\r\n    \"readonly\": false,\r\n    \"display\": \"Slider Field (first parent)\",\r\n    \"help\": \"Slider performing the first dependency\",\r\n    \"name\": \"nested_showIf_parent1\",\r\n    \"type\": \"slider\"\r\n},\r\n{\r\n    \"default\": 10,\r\n    \"display\": \"Number Field (second parent)\",\r\n    \"help\": \"Number Field, depends on the Slider to be visible and performes a nested parent dependency for nested_showIf_field\",\r\n    \"name\": \"nested_showIf_parent2\",\r\n    \"type\": \"number\",\r\n    \"showIf\": {\r\n        \"parentName\": \"nested_showIf_parent1\",\r\n        \"parentValue\": 8\r\n    }\r\n},\r\n{\r\n    \"default\": \"option1\",\r\n    \"display\": \"Select Field (nested showIf)\",\r\n    \"help\": \"Select Field, visible only when the number field value becomes 5\",\r\n    \"name\": \"nested_showIf_field\",\r\n    \"type\": \"select\",\r\n    \"showIf\": {\r\n        \"parentName\": \"nested_showIf_parent2\",\r\n        \"parentValue\": 5\r\n    },\r\n    \"values\": [\"option1\", \"option2\", \"option3\"]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "showIf_multi_select",
+					"display": "And/OR/NOT operands support for multiple select field",
+					"fields": [
+						{
+							"display": "Multiple Select",
+							"multiple": true,
+							"name": "multi_select_example",
+							"required": true,
+							"type": "select",
+							"values": ["option-1", "option-2", "option-3"]
+						},
+						{
+							"default": false,
+							"display": "Field-1",
+							"help": "Boolean Field shown when option1 and option2 are checked",
+							"name": "multi_select_showIf_field1",
+							"type": "boolean",
+							"showIf": {
+								"parentName": "multi_select_example",
+								"parentValue": ["option-1", "option-2"]
+							}
+						},
+						{
+							"default": "",
+							"type": "text",
+							"validation": "^[A-Za-z0-9._-]+$",
+							"display": "Field-2",
+							"help": "Text Field shown when nor option1 neither option2 is checked",
+							"name": "multi_select_showIf_field2",
+							"showIf": {
+								"parentName": "multi_select_example",
+								"parentValue": ["option-1", "option-2"],
+								"operator": "not"
+							}
+						},
+						{
+							"default": 0.2,
+							"display": "Field-3",
+							"help": "Number shown when either option1 or option3 are checked",
+							"name": "multi_select_showIf_field3",
+							"required": true,
+							"restrictions": {
+								"max": 0.7,
+								"min": 0.1
+							},
+							"type": "number",
+							"showIf": {
+								"parentName": "multi_select_example",
+								"parentValue": ["option-1", "option-3"],
+								"operator": "and"
+							}
+						},
+						{
+							"default": "value1",
+							"display": "Select Field with Default value (Field-4)",
+							"name": "select_field4",
+							"type": "select",
+							"values": ["value1", "value2"]
+						},
+						{
+							"display": "Field-5",
+							"help": "Select shown based on the values of field-4",
+							"name": "multi_select_showIf_field5",
+							"required": true,
+							"showIf": {
+								"parentName": "select_field4",
+								"parentValue": ["value1", "value2"]
+							},
+							"type": "text"
+						},
+						{
+							"name": "showIf_multi_select_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n    \"display\": \"Multiple Select\",\r\n    \"multiple\": true,\r\n    \"name\": \"multi_select_example\",\r\n    \"required\": true,\r\n    \"type\": \"select\",\r\n    \"values\": [\"option-1\", \"option-2\", \"option-3\"]\r\n},\r\n{\r\n    \"default\": false,\r\n    \"display\": \"Field-1\",\r\n    \"help\": \"Boolean Field shown when option1 and option2 are checked\",\r\n    \"name\": \"multi_select_showIf_field1\",\r\n    \"type\": \"boolean\",\r\n    \"showIf\": {\r\n        \"parentName\": \"multi_select_example\",\r\n        \"parentValue\": [\"option-1\", \"option-2\"]\r\n    }\r\n},\r\n{\r\n    \"default\": \"\",\r\n    \"type\": \"text\",\r\n    \"validation\": \"^[A-Za-z0-9._-]+$\",\r\n    \"display\": \"Field-2\",\r\n    \"help\": \"Text Field shown when nor option1 neither option2 is checked\",\r\n    \"name\": \"multi_select_showIf_field2\",\r\n    \"showIf\": {\r\n        \"parentName\": \"multi_select_example\",\r\n        \"parentValue\": [\"option-1\", \"option-2\"],\r\n        \"operator\": \"not\"\r\n    }\r\n},\r\n{\r\n    \"default\": 0.2,\r\n    \"display\": \"Field-3\",\r\n    \"help\": \"Number shown when either option1 or option3 are checked\",\r\n    \"name\": \"multi_select_showIf_field3\",\r\n    \"required\": true,\r\n    \"restrictions\": {\r\n        \"max\": 0.7,\r\n        \"min\": 0.1\r\n    },\r\n    \"type\": \"number\",\r\n    \"showIf\": {\r\n        \"parentName\": \"multi_select_example\",\r\n        \"parentValue\": [\"option-1\", \"option-3\"],\r\n        \"operator\": \"and\"\r\n    }\r\n},\r\n{\r\n    \"default\": \"value1\",\r\n    \"display\": \"Select Field with Default value (Field-4)\",\r\n    \"name\": \"select_field4\",\r\n    \"type\": \"select\",\r\n    \"values\": [\"value1\", \"value2\"]\r\n},\r\n{\r\n    \"display\": \"Field-5\",\r\n    \"help\": \"Select shown based on the values of field-4\",\r\n    \"name\": \"multi_select_showIf_field5\",\r\n    \"required\": true,\r\n    \"showIf\": {\r\n        \"parentName\": \"select_field4\",\r\n        \"parentValue\": [\"value1\", \"value2\"]\r\n    },\r\n    \"type\": \"text\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "legacy_showIf_subsections",
+					"display": "Subsections showIf",
+					"fields": [
+						{
+							"default": true,
+							"display": "Show dummy subsection",
+							"help": "Notice when switching to false dummy_subsection disappear",
+							"name": "legacy_show_subsection",
+							"type": "boolean"
+						},
+						{
+							"name": "legacy_field_showIf_expression_json",
+							"display": "Filed Source Code",
+							"type": "editor",
+							"height":"10em",
+							"default": "{\r\n    \"default\": true,\r\n    \"display\": \"Show dummy subsection\",\r\n    \"help\": \"Notice when switching to false dummy_subsection disappear\",\r\n    \"name\": \"legacy_show_subsection\",\r\n    \"type\": \"boolean\"\r\n}"
+						},
+						{
+							"name": "legacy_subsection_showIf_expression_json",
+							"display": "Subsection Source Code",
+							"type": "editor",
+							"height":"20em",
+							"default": "{\r\n    \"name\": \"dummy_legacy_subsection\",\r\n    \"display\": \"Dummy subsection depends on legacy_show_subsection field\",\r\n    \"showIf\": {\r\n        \"parentName\": \"legacy_show_subsection\",\r\n        \"parentValue\": true\r\n    },\r\n    \"fields\": [\r\n        {\r\n            \"display\": \"dummy field\",\r\n            \"name\": \"legacy_dummy_field\",\r\n            \"required\": true,\r\n            \"type\": \"text\"\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "dummy_legacy_subsection",
+					"display": "Dummy subsection depends on legacy_show_subsection field",
+					"showIf": {
+						"parentName": "legacy_show_subsection",
+						"parentValue": true
+					},
+					"fields": [
+						{
+							"display": "dummy field",
+							"name": "legacy_dummy_field",
+							"required": true,
+							"type": "text"
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "show field or subSection according to custom expression",
+			"display": "Advanced showIf",
+			"name": "showIf_custom_expression",
+			"subSections": [
+				{
+					"name": "showIf_expression_fields",
+					"display": "Advanced showIf",
+					"fields": [
+						{
+							"data": "About:\nshowIf customExpression is a logical-statement made out of field/s name/s, arithmetic/comparison/boolean operands and sometimes functions,\nIt defined under field/subsection and determinds it's visability.\nwhen expression result is TRUE, relevant field/subsection get's displayed, when FALSE it doesn't (it's that simple)\nExample: {{field_1}} == \\\"1.1.1.1\\\" and (abs({{field_2}} * {{field_3}}) > 2000.0 or {{field_4}} in {{field_5}})\nNotice:\n(1) customExpression string must obey bellow syntax\n(2) each field name should be wrapped with two curly braces, like so: {{field_name}}\n(3) string should start and end with \" like so: \\\"some random string\\\"",
+							"display": "Info",
+							"name": "info_msg_showIf_expression",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"data": "(1) customExpression must obey bellow syntax\n(2) Each field name should be wrapped with two curly braces, like so: {{field_name}}\n(3) String inside the expression should start and end with \\\" like so: \\\"some random string\\\"",
+							"display": "Notice",
+							"name": "warning_msg_showIf_expression",
+							"severity": "warning",
+							"type": "message"
+						},
+						{
+							"columns": [
+								{
+									"display": "Numeric arithmetic",
+									"name": "numeric_arithmetic",
+									"required": true,
+									"type": "text"
+								},
+								{
+									"display": "Description",
+									"name": "numeric_arithmetic_description",
+									"required": true,
+									"type": "text"
+								}
+							],
+							"default": [
+								{
+									"numeric_arithmetic": "x + y",
+									"numeric_arithmetic_description": "Add"
+								},
+								{
+									"numeric_arithmetic": "x - y",
+									"numeric_arithmetic_description": "Subtract"
+								},
+								{
+									"numeric_arithmetic": "x * y",
+									"numeric_arithmetic_description": "Multiply"
+								},
+								{
+									"numeric_arithmetic": "x / y",
+									"numeric_arithmetic_description": "Divide"
+								},
+								{
+									"numeric_arithmetic": "x % y",
+									"numeric_arithmetic_description": "Modulo"
+								},
+								{
+									"numeric_arithmetic": "x ^ y",
+									"numeric_arithmetic_description": "Power"
+								}
+							],
+							"display": "Arithmetic operators",
+							"name": "numberic_arithmetic_operations",
+							"operations": {
+							},
+							"type": "grid"
+						},
+						{
+							"columns": [
+								{
+									"display": "Comparisons",
+									"name": "comparisons",
+									"required": true,
+									"type": "text"
+								},
+								{
+									"display": "Description",
+									"name": "comparison_description",
+									"required": true,
+									"type": "text"
+								}
+							],
+							"default": [
+								{
+									"comparisons": "x == y",
+									"comparison_description": "Equals"
+								},
+								{
+									"comparisons": "x < y",
+									"comparison_description": "Less than"
+								},
+								{
+									"comparisons": "x <= y",
+									"comparison_description": "Less than or equal to"
+								},
+								{
+									"comparisons": "x > y",
+									"comparison_description": "Greater than"
+								},
+								{
+									"comparisons": "x >= y",
+									"comparison_description": "Greater than or equal to"
+								},
+								{
+									"comparisons": "x ~= y",
+									"comparison_description": "Regular expression match"
+								},
+								{
+									"comparisons": "x in (a, b, c)",
+									"comparison_description": "Equivalent to (x == a or x == b or x == c)"
+								},
+								{
+									"comparisons": "x not in (a, b, c)",
+									"comparison_description": "Equivalent to (x != a and x != b and x != c)"
+								}
+							],
+							"display": "Comparison operators",
+							"name": "comparison_operations",
+							"operations": {
+							},
+							"type": "grid"
+						},
+						{
+							"columns": [
+								{
+									"display": "Boolean logic",
+									"name": "boolean_logic",
+									"required": true,
+									"type": "text"
+								},
+								{
+									"display": "Description",
+									"name": "boolean_logic_description",
+									"required": true,
+									"type": "text"
+								}
+							],
+							"default": [
+								{
+									"boolean_logic": "x or y",
+									"boolean_logic_description": "Boolean or"
+								},
+								{
+									"boolean_logic": "x and y",
+									"boolean_logic_description": "Boolean and"
+								},
+								{
+									"boolean_logic": "not x",
+									"boolean_logic_description": "Boolean not"
+								},
+								{
+									"boolean_logic": "x ? y : z",
+									"boolean_logic_description": "If boolean x, value y, else z"
+								},
+								{
+									"boolean_logic": "( x )",
+									"boolean_logic_description": "Explicity operator precedence"
+								}
+							],
+							"display": "Boolean logic",
+							"name": "boolean_logic_operations",
+							"operations": {
+							},
+							"type": "grid"
+						},
+						{
+							"columns": [
+								{
+									"display": "Functions",
+									"name": "function",
+									"required": true,
+									"type": "text"
+								},
+								{
+									"display": "Description",
+									"name": "function_description",
+									"required": true,
+									"type": "text"
+								}
+							],
+							"default": [
+								{
+									"function": "abs(x)",
+									"function_description": "Absolute value"
+								},
+								{
+									"function": "ceil(x)",
+									"function_description": "Round floating point up"
+								},
+								{
+									"function": "floor(x)",
+									"function_description": "Round floating point down"
+								},
+								{
+									"function": "log(x)",
+									"function_description": "Natural logarithm"
+								},
+								{
+									"function": "max(a, b, c...)",
+									"function_description": "Max value (variable length of args)"
+								},
+								{
+									"function": "min(a, b, c...)",
+									"function_description": "Min value (variable length of args)"
+								},
+								{
+									"function": "random()",
+									"function_description": "Random floating point from 0.0 to 1.0"
+								},
+								{
+									"function": "round(x)",
+									"function_description": "Round floating point"
+								},
+								{
+									"function": "sqrt(x)",
+									"function_description": "Square root"
+								}
+							],
+							"display": "Functions",
+							"name": "function_operations",
+							"operations": {
+							},
+							"type": "grid"
+						},
+						{
+							"default": "Make me disappear",
+							"display": "Child of 4 parents :D",
+							"name": "showIf_child_1",
+							"showIf": {
+								"customExpression": "\"1.1.1.1\" in {{showIf_parent_1}} or (max({{showIf_parent_2}},{{showIf_parent_3}}) >= 25 or \"option-3\" not in {{showIf_parent_4}})"
+							},
+							"type": "text"
+						},
+						{
+							"default": "1.1.1.1",
+							"display": "Parent1",
+							"help": "to display showIf_child_1 field's value must contain 1.1.1.1",
+							"name": "showIf_parent_1",
+							"type": "ip-list"
+						},
+						{
+							"default": 25,
+							"display": "Parent2",
+							"help": "to display showIf_child_1 my value shouold be >= 25 or parent3's value should be >=25",
+							"name": "showIf_parent_2",
+							"required": true,
+							"step": 0.1,
+							"restrictions": {
+								"min": 0.0,
+								"max": 50
+							},
+							"type": "number"
+						},
+						{
+							"default": 25,
+							"display": "Parent3",
+							"help": "to display showIf_child_1 my value shouold be >= 25 or parent2's value should be >=25",
+							"name": "showIf_parent_3",
+							"required": true,
+							"step": 0.1,
+							"restrictions": {
+								"min": 0.0,
+								"max": 50
+							},
+							"type": "number"
+						},
+						{
+							"display": "Parent4",
+							"default": ["option-3"],
+							"help": "to display showIf_child_1 my value should not contain \"option-3\"",
+							"multiple": true,
+							"name": "showIf_parent_4",
+							"required": true,
+							"type": "select",
+							"values": ["option-1", "option-2", "option-3"]
+						},
+						{
+							"name": "showIf_expression_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n    \"default\": \"Make me disappear\",\r\n    \"display\": \"Child of 4 parents :D\",\r\n    \"name\": \"showIf_child_1\",\r\n    \"showIf\": {\r\n        \"customExpression\": \"\\\"1.1.1.1\\\" in {{showIf_parent_1}} or (max({{showIf_parent_2}},{{showIf_parent_3}}) >= 25 or \\\"option-3\\\" not in {{showIf_parent_4}})\"\r\n    },\r\n    \"type\": \"text\"\r\n},\r\n{\r\n    \"default\": \"1.1.1.1\",\r\n    \"display\": \"Parent1\",\r\n    \"help\": \"to display showIf_child_1 field's value must contain 1.1.1.1\",\r\n    \"name\": \"showIf_parent_1\",\r\n    \"type\": \"ip-list\"\r\n},\r\n{\r\n    \"default\": 25,\r\n    \"display\": \"Parent2\",\r\n    \"help\": \"to display showIf_child_1 my value shouold be >= 25 or parent3's value should be >=25\",\r\n    \"name\": \"showIf_parent_2\",\r\n    \"required\": true,\r\n    \"step\": 0.1,\r\n    \"restrictions\": {\r\n        \"min\": 0.0,\r\n        \"max\": 50\r\n    },\r\n    \"type\": \"number\"\r\n},\r\n{\r\n    \"default\": 25,\r\n    \"display\": \"Parent3\",\r\n    \"help\": \"to display showIf_child_1 my value shouold be >= 25 or parent2's value should be >=25\",\r\n    \"name\": \"showIf_parent_3\",\r\n    \"required\": true,\r\n    \"step\": 0.1,\r\n    \"restrictions\": {\r\n        \"min\": 0.0,\r\n        \"max\": 50\r\n    },\r\n    \"type\": \"number\"\r\n},\r\n{\r\n    \"display\": \"Parent4\",\r\n    \"default\": [\"option-3\"],\r\n    \"help\": \"to display showIf_child_1 my value should not contain \\\"option-3\\\"\",\r\n    \"multiple\": true,\r\n    \"name\": \"showIf_parent_4\",\r\n    \"required\": true,\r\n    \"type\": \"select\",\r\n    \"values\": [\"option-1\", \"option-2\", \"option-3\"]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "nested_advanced_showIf",
+					"display": "Nested Advanced showIf",
+					"fields": [
+						{
+							"data": "Avoid of circular dependency!!!\nWhy: given field_a dependes on field_b and field_b dependes on field_a, field_a new value can cause itself to disappear without recover and we don't want that :D",
+							"display": "Notice",
+							"name": "nested_msg_showIf_expression",
+							"severity": "warning",
+							"type": "message"
+						},
+						{
+							"default": false,
+							"display": "Grandfather",
+							"help": "to show father set value to true",
+							"name": "grandfather",
+							"type": "boolean"
+						},
+						{
+							"default": "the WRONG option",
+							"display": "Grandmother",
+							"help": "to show father set value to \"The RIGHT option\"",
+							"name": "grandmother",
+							"required": false,
+							"type": "select",
+							"values": ["The RIGHT option", "the WRONG option"]
+						},
+						{
+							"default": false,
+							"display": "Father",
+							"help": "to show child set value to true",
+							"name": "father",
+							"type": "boolean",
+							"showIf": {
+								"customExpression": "{{grandfather}} and {{grandmother}} == \"The RIGHT option\""
+							}
+						},
+						{
+							"default": "earch",
+							"display": "Mother",
+							"help": "to show child set value to \"teresa\"",
+							"name": "mother",
+							"type": "text"
+						},
+						{
+							"default": "Hi there",
+							"display": "child",
+							"name": "child",
+							"type": "text",
+							"showIf": {
+								"customExpression": "{{father}} and {{mother}} == \"teresa\""
+							}
+						},
+						{
+							"name": "nested_showIf_expression_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n    \"default\": false,\r\n    \"display\": \"Grandfather\",\r\n    \"help\": \"to show father set value to true\",\r\n    \"name\": \"grandfather\",\r\n    \"type\": \"boolean\"\r\n},\r\n{\r\n    \"default\": \"the WRONG option\",\r\n    \"display\": \"Grandmother\",\r\n    \"help\": \"to show father set value to \\\"The RIGHT option\\\"\",\r\n    \"name\": \"grandmother\",\r\n    \"required\": false,\r\n    \"type\": \"select\",\r\n    \"values\": [\"The RIGHT option\", \"the WRONG option\"]\r\n},\r\n{\r\n    \"default\": false,\r\n    \"display\": \"Father\",\r\n    \"help\": \"to show child set value to true\",\r\n    \"name\": \"father\",\r\n    \"type\": \"boolean\",\r\n    \"showIf\": {\r\n        \"customExpression\": \"{{grandfather}} and {{grandmother}} == \\\"The RIGHT option\\\"\"\r\n    }\r\n},\r\n{\r\n    \"default\": \"earch\",\r\n    \"display\": \"Mother\",\r\n    \"help\": \"to show child set value to \\\"teresa\\\"\",\r\n    \"name\": \"mother\",\r\n    \"type\": \"text\"\r\n},\r\n{\r\n    \"default\": \"Hi there\",\r\n    \"display\": \"child\",\r\n    \"name\": \"child\",\r\n    \"type\": \"text\",\r\n    \"showIf\": {\r\n        \"customExpression\": \"{{father}} and {{mother}} == \\\"teresa\\\"\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "advanced_showIf_subsections",
+					"display": "Subsections showIf",
+					"fields": [
+						{
+							"default": true,
+							"display": "Show dummy subsection",
+							"help": "Notice when switching to false dummy_subsection disappear",
+							"name": "show_subsection",
+							"type": "boolean"
+						},
+						{
+							"name": "field_showIf_expression_json",
+							"display": "Filed Source Code",
+							"type": "editor",
+							"height":"10em",
+							"default": "{\r\n    \"name\": \"field_showIf_expression_json\",\r\n    \"display\": \"Filed Source Code\",\r\n    \"type\": \"editor\",\r\n    \"default\": \"\"\r\n}"
+						},
+						{
+							"name": "subsection_showIf_expression_json",
+							"display": "Subsection Source Code",
+							"type": "editor",
+							"height":"20em",
+							"default": "{\r\n    \"name\": \"dummy_subsection\",\r\n    \"display\": \"Dummy subsection depends on show_subsection field\",\r\n    \"showIf\": {\r\n        \"customExpression\": \"{{show_subsection}}\"\r\n    },\r\n    \"fields\": [\r\n        {\r\n            \"display\": \"dummy field\",\r\n            \"name\": \"dummy_field\",\r\n            \"required\": true,\r\n            \"type\": \"text\"\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				},
+				{
+					"name": "dummy_subsection",
+					"display": "Dummy subsection depends on show_subsection field",
+					"showIf": {
+						"customExpression": "{{show_subsection}}"
+					},
+					"fields": [
+						{
+							"display": "dummy field",
+							"name": "dummy_field",
+							"required": true,
+							"type": "text"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,4 @@
+#csfWidgets-banner-appBanner-productName {
+	margin-top: initial !important; /* override changes from antd */
+	margin-bottom: initial !important; /* override changes from antd */
+}

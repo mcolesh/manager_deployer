@@ -1,0 +1,79 @@
+.generic-field-input {
+	border: 1px solid #eceeef;
+	padding: 0.5rem 0.5rem;
+}
+
+.spinner-container .csfWidgets .spinner {
+	border-width: 2px !important;
+	background-clip: padding-box !important;
+	border: 1px solid rgba(0, 0, 0, 0.15) !important;
+	border-radius: 0.25rem !important;
+}
+
+.remove-range-button .button {
+	min-width: auto !important;
+	padding: 4px !important;
+	margin-left: 5px;
+	min-height: auto !important;
+}
+
+.add-range-field-button .button {
+	min-width: auto !important;
+	margin-left: 5px;
+}
+
+#add-item-btn-button {
+	margin-top: 5px;
+}
+
+.csfWidgets .textinput .TextInputContainer,
+.csfWidgets .textinput input {
+	max-width: initial !important;
+}
+
+.csfWidgets .FileUploader .dzContainer .listItemWrapper {
+	height: 45px !important;
+	width: 100% !important;
+}
+
+.csfWidgets .FileUploader .dzContainer .fileListContainer {
+	padding: 0 !important;
+}
+
+.novl-second-field {
+	width: 100% !important;
+}
+
+.csfWidgets .Select-menu-outer,
+.ant-select-dropdown {
+	z-index: 9999999 !important; /*workaround until CSFS-20893 be done */
+}
+
+.ant-select-dropdown {
+	z-index: 9999999 !important; /*workaround to fix CBIS-11698 */
+}
+
+.novl-second-field .select-item-container {
+	min-width: 100% !important;
+	max-width: 100% !important;
+}
+
+.novl-second-field .Select-control {
+	max-width: 100% !important;
+}
+
+.Select-menu-outer > .Select-menu,
+.Select-menu-outer.portal-select-menu-outer {
+	max-width: 100% !important;
+}
+
+/* override changes from antd */
+.csfWidgets.list-item {
+	box-sizing: initial;
+}
+
+.subsections-tuple-header {
+	width: 100px;
+	margin-right: 10px;
+	margin-top: 2px;
+}

@@ -1,0 +1,56 @@
+{
+	"name": "genericRange",
+	"display": "Generic Range",
+	"description": "Generic Range",
+	"sections": [
+		{
+			"name": "generic_range",
+			"display": "Generic Range",
+			"description": "Generic Range",
+			"subSections": [
+				{
+					"name": "Generic_Range_Sub1",
+					"display": "Generic Range properties:",
+					"fields": [
+						{
+							"data": "Generic Range properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display (mandatory here)\n⦿onlyRangeEnable - disable name label\n⦿required - when set to true, input must be provided\n⦿restrictions - provide min or/and max values to restrict user input",
+							"display": " props",
+							"name": "info_msg_generic_range_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": [
+								{
+									"name": "range-1-label",
+									"value": [{ "end": 4095, "isRange": true, "start": 0 }]
+								},
+								{
+									"name": "range-2-label",
+									"value": [{ "end": 4095, "isRange": true, "start": 0 }]
+								},
+								{ "name": "range-3-label", "value": [{ "end": 4095, "isRange": true, "start": 0 }] }
+							],
+							"display": "Generic Range (mandatory)",
+							"help": "Count of range fields will depend on count of object inside default",
+							"name": "generic_range_mandatory",
+							"onlyRangeEnable": true,
+							"readonly": false,
+							"required": true,
+							"restrictions": { "max": 4095, "min": 0 },
+							"type": "generic-range",
+							"validation": "^[A-Za-z\\s0-9._-]+$",
+							"validationDescription": "Only alphabet, numeric, '.', '_', ' ' and '-' are allowed "
+						},
+						{
+							"name": "generic_range_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\n\t\"default\": [\n\t\t{\n\t\t\t\"name\": \"range-1-label\",\n\t\t\t\"value\": [\n\t\t\t\t{ \n\t\t\t\t\t\"end\": 4095, \n\t\t\t\t\t\"isRange\": true, \n\t\t\t\t\t\"start\": 0 \n\t\t\t\t}\n\t\t\t], \n\t\t},\n\t\t{\n\t\t\t\"name\": \"range-2-label\",\n\t\t\t\"value\": [\n\t\t\t\t{ \n\t\t\t\t\t\"end\": 4095, \n\t\t\t\t\t\"isRange\": true, \n\t\t\t\t\t\"start\": 0 \n\t\t\t\t}\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\t\"name\": \"range-3-label\",\n\t\t\t\"value\": [\n\t\t\t\t{ \n\t\t\t\t\t\"end\": 4095, \n\t\t\t\t\t\"isRange\": true, \n\t\t\t\t\t\"start\": 0 \n\t\t\t\t}\n\t\t\t],\n\t\t}\n\t], \n\t\"validation\": \"^[A-Za-z\\s0-9._-]+$\",\n\t\"validationDescription\": \"Only alphabet, numeric, '.', '_', ' ' and '-' are allowed \",\n\t\"display\": \"Generic Range (mandatory)\",\n\t\"name\": \"generic_range_mandatory\",\n\t\"type\": \"generic-range\"\n\t\"onlyRangeEnable\": true,\n\t\"readonly\": false, \n\t\"required\": true,\n\t\"restrictions\": {\n\t\t\"max\": 4094,\n\t\t\"min\": 0\n\t}\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,121 @@
+{
+	"display": "List of IP/Host addresses",
+	"sections": [
+		{
+			"name": "iplist",
+			"display": "IP List",
+			"description": "IP List Options",
+			"subSections": [
+				{
+					"name": "iplist_Sub1",
+					"display": "ip-list properties:",
+					"fields": [
+						{
+							"data": "ip-list field properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed) \n⦿validation - a regular expression that the input must obey\n⦿unique - when set to false same address can be added more then once",
+							"display": "Ip-list props",
+							"name": "info_msg_iplist_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "Ip-list-1",
+							"name": "iplist_iplist1",
+							"help": "Ip-list-1 addresses should be unique and obey the pattern: 1.10.1-5.1-5. default ip-list-1 servers are:'1.10.0.5','1.10.3.2', '1.10.2.5'",
+							"unique": true,
+							"type": "ip-list",
+							"default": ["1.10.0.5", "1.10.3.2", "1.10.2.5"],
+							"validation": "1.10.[0-5].[0-5]"
+						},
+						{
+							"display": "Ip-list-2",
+							"name": "iplist_iplist2",
+							"help": "ips-list-2 is a predefined readonly field",
+							"readonly": true,
+							"type": "ip-list",
+							"default": ["192.10.1.10", "192.10.1.15", "192.10.1.20"]
+						},
+						{
+							"display": "Ip-list-3",
+							"name": "iplist_iplist3",
+							"help": "ips-list-3 is a predefined field that can have multiple ip addresses with the same value",
+							"unique": false,
+							"type": "ip-list",
+							"default": ["1.1.1.1", "1.1.1.1", "1.1.1.1"]
+						},
+						{
+							"display": "Ip-list-4",
+							"name": "iplist_iplist4",
+							"help": "Ip-list-4 must include at least one address",
+							"required": true,
+							"type": "ip-list"
+						},
+						{
+							"name": "iplist_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"Ip-list-1\",\r\n  \"name\": \"iplist_iplist1\",\r\n  \"help\":\r\n    \"Ip-list-1 addresses should be unique and obey the pattern: 1.10.1-5.1-5. default ip-list-1 servers are:'1.10.0.5','1.10.3.2', '1.10.2.5'\",\r\n  \"unique\": true,\r\n  \"type\": \"ip-list\",\r\n  \"default\": [\"1.10.0.5\", \"1.10.3.2\", \"1.10.2.5\"],\r\n  \"validation\": \"1.10.[0-5].[0-5]\"\r\n},\r\n{\r\n  \"display\": \"Ip-list-2\",\r\n  \"name\": \"iplist_iplist2\",\r\n  \"help\": \"ips-list-2 is a predefined readonly field\",\r\n  \"readonly\": true,\r\n  \"type\": \"ip-list\",\r\n  \"default\": [\"192.10.1.10\", \"192.10.1.15\", \"192.10.1.20\"]\r\n},\r\n{\r\n  \"display\": \"Ip-list-3\",\r\n  \"name\": \"iplist_iplist3\",\r\n  \"help\":\r\n    \"ips-list-3 is a predefined field that can have multiple ip addresses with the same value\",\r\n  \"unique\": false,\r\n  \"type\": \"ip-list\",\r\n  \"default\": [\"1.1.1.1\", \"1.1.1.1\", \"1.1.1.1\"]\r\n},\r\n{\r\n  \"display\": \"Ip-list-4\",\r\n  \"name\": \"iplist_iplist4\",\r\n  \"help\": \"Ip-list-4 must include at least one address\",\r\n  \"required\": true,\r\n  \"type\": \"ip-list\"\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "hostlist",
+			"display": "Host List",
+			"description": "Host List Options",
+			"subSections": [
+				{
+					"name": "hostlist_Sub1",
+					"display": "host-list properties:",
+					"fields": [
+						{
+							"data": "host-list field properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed) \n⦿validation - a regular expression that the input must obey\n⦿unique - when set to false same address can be added more then once",
+							"display": "host-list props",
+							"name": "info_msg_host_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "host-list-1",
+							"name": "hostlist_hostlist1",
+							"help": "host-list-1 addresses should be unique and obey the pattern: /dev/<folderName>. default host-list-1 servers are:'/dev/sda3', '/dev/sdb'",
+							"unique": true,
+							"type": "host-list",
+							"default": ["/dev/sda3", "/dev/sdb"],
+							"validation": "^/dev/"
+						},
+						{
+							"display": "host-list-2",
+							"name": "host_hostlist2",
+							"help": "host-list-2 is a predefined readonly field",
+							"readonly": true,
+							"type": "host-list",
+							"default": ["/storage/s1", "/storage/s2", "/storage/s3"]
+						},
+						{
+							"display": "host-list-3",
+							"name": "hostlist_iplist3",
+							"help": "host-list-3 is a predefined field that can have multiple host addresses with the same value",
+							"unique": false,
+							"type": "host-list",
+							"default": ["/public/1", "/public/1"]
+						},
+						{
+							"display": "host-list-4",
+							"name": "hostlist_iplist4",
+							"help": "host-list-4 must include at least one address",
+							"required": true,
+							"type": "host-list"
+						},
+						{
+							"name": "hostlist_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"host-list-1\",\r\n  \"name\": \"hostlist_hostlist1\",\r\n  \"help\":\r\n    \"host-list-1 addresses should be unique and obey the pattern: /dev/<folderName>. default host-list-1 servers are:'/dev/sda3', '/dev/sdb'\",\r\n  \"unique\": true,\r\n  \"type\": \"host-list\",\r\n  \"default\": [\"/dev/sda3\", \"/dev/sdb\"],\r\n  \"validation\": \"^/dev/\"\r\n},\r\n{\r\n  \"display\": \"host-list-2\",\r\n  \"name\": \"host_hostlist2\",\r\n  \"help\": \"host-list-2 is a predefined readonly field\",\r\n  \"readonly\": true,\r\n  \"type\": \"host-list\",\r\n  \"default\": [\"/storage/s1\", \"/storage/s2\", \"/storage/s3\"]\r\n},\r\n{\r\n  \"display\": \"host-list-3\",\r\n  \"name\": \"hostlist_iplist3\",\r\n  \"help\":\r\n    \"host-list-3 is a predefined field that can have multiple host addresses with the same value\",\r\n  \"unique\": false,\r\n  \"type\": \"host-list\",\r\n  \"default\": [\"/public/1\", \"/public/1\"]\r\n},\r\n{\r\n  \"display\": \"host-list-4\",\r\n  \"name\": \"hostlist_iplist4\",\r\n  \"help\": \"host-list-4 must include at least one address\",\r\n  \"required\": true,\r\n  \"type\": \"host-list\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

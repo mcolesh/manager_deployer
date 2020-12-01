@@ -1,0 +1,289 @@
+﻿{
+	"name": "inputFields",
+	"display": "Input Fields",
+	"description": "Set and verify Input Fields",
+	"sections": [
+		{
+			"name": "Text",
+			"display": "Text field",
+			"description": "Text field Option",
+			"subSections": [
+				{
+					"name": "text_Sub1",
+					"display": "Text field:",
+					"fields": [
+						{
+							"data": "Text field Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed) \n⦿validation - a regular expression that the input must obey\n⦿placeholder - Disappears on user input",
+							"display": "Text field properties",
+							"name": "info_msg_text_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "Field-1",
+							"default": "Click the help button to reveal field's pattern",
+							"help": "Field-1 input should start with 'Text-1' followed by one letter",
+							"name": "text_field1",
+							"type": "text",
+							"validation": "^Text-1[A-Za-z]+"
+						},
+						{
+							"display": "Field-2",
+							"default": "Click the help button to reveal field's pattern",
+							"help": "Field-2 input should contain only numbers",
+							"name": "text_field2",
+							"type": "text",
+							"validation": "^[0-9]+$"
+						},
+						{
+							"display": "Field-3",
+							"default": "You don't have to fill me",
+							"help": "Field-3 is not a mandatory field, hence, it can be sumbited empty",
+							"name": "text_field3",
+							"required": false,
+							"type": "text"
+						},
+						{
+							"display": "Field-4",
+							"default": "Some fixed input",
+							"help": "Field-4 is a disabled, presetted field",
+							"name": "text_field4",
+							"readonly": true,
+							"type": "text"
+						},
+						{
+							"display": "Field-5",
+							"help": "Field-5 has placeholder field",
+							"name": "text_field5",
+							"placeholder": "this placeholder will disappear on user input",
+							"type": "text"
+						},
+						{
+							"name": "text_field_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"Field-1\",\r\n  \"default\": \"Click the help button to reveal field's pattern\",\r\n  \"help\": \"Field-1 input should start with 'Text-1' followed by one letter\",\r\n  \"name\": \"text_field1\",\r\n  \"type\": \"text\",\r\n  \"validation\": \"^Text-1[A-Za-z]+\"\r\n},\r\n{\r\n  \"display\": \"Field-2\",\r\n  \"default\": \"Click the help button to reveal field's pattern\",\r\n  \"help\": \"Field-2 input should contain only numbers\",\r\n  \"name\": \"text_field2\",\r\n  \"type\": \"text\",\r\n  \"validation\": \"^[0-9]+$\"\r\n},\r\n{\r\n  \"display\": \"Field-3\",\r\n  \"default\": \"You don't have to fill me\",\r\n  \"help\": \"Field-3 is not a mandatory field, hence, it can be sumbited empty\",\r\n  \"name\": \"text_field3\",\r\n  \"required\": false,\r\n  \"type\": \"text\"\r\n},\r\n{\r\n  \"display\": \"Field-4\",\r\n  \"default\": \"Some fixed input\",\r\n  \"help\": \"Field-4 is a disabled, presetted field\",\r\n  \"name\": \"text_field4\",\r\n  \"readonly\": true,\r\n  \"type\": \"text\"\r\n},\r\n{\r\n  \"display\": \"Field-5\",\r\n  \"help\": \"Field-5 has placeholder field\",\r\n  \"name\": \"text_field5\",\r\n  \"placeholder\": \"this placeholder will disappear on user input\",\r\n  \"type\": \"text\"\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Password",
+			"display": "Password field",
+			"description": "Password field Options",
+			"subSections": [
+				{
+					"name": "password_sub1",
+					"display": "Password field:",
+					"fields": [
+						{
+							"data": "Password field Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed)",
+							"display": "password field properties",
+							"name": "info_msg_password_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "Password-1",
+							"default": "",
+							"help": "Password-1 give access to system 'X', it should obey the pattern: minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character",
+							"name": "password_field1",
+							"type": "password",
+							"required": true,
+							"validation": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+						},
+						{
+							"display": "Password-2",
+							"default": "123456789",
+							"help": "Password-1 give access to system 'Y',  it should obey the pattern: only numbers. password-1 is also not a mandatory field, hence, empty string is allowed",
+							"name": "password_field2",
+							"type": "password",
+							"validation": "^[1-9]"
+						},
+						{
+							"display": "Password-3",
+							"default": "password123",
+							"help": "Field-3 is a fixed password with the value of 'password123'",
+							"name": "password_field4",
+							"readonly": true,
+							"type": "password"
+						},
+						{
+							"name": "password_field_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"Password-1\",\r\n  \"default\": \"\",\r\n  \"help\": \"Password-1 give access to system 'X', it should obey the pattern: minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character\",\r\n  \"name\": \"password_field1\",\r\n  \"type\": \"password\",\r\n  \"required\": true,\r\n  \"validation\": \"^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$\"\r\n},\r\n{\r\n  \"display\": \"Password-2\",\r\n  \"default\": \"123456\",\r\n  \"help\": \"Password-1 give access to system 'Y',  it should obey the pattern: only numbers, also it is not mandatory, i.e. empty string is allowed\",\r\n  \"name\": \"password_field2\",\r\n  \"type\": \"password\",\r\n  \"validation\": \"^[1-9]\"\r\n},\r\n{\r\n  \"display\": \"Password-3\",\r\n  \"default\": \"password\",\r\n  \"help\": \"Field-3 is a fixed password, with the value 'password'\",\r\n  \"name\": \"password_field4\",\r\n  \"readonly\": true,\r\n  \"type\": \"password\"\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cidr",
+			"display": "CIDR field",
+			"description": "Classless Inter-Domain Routing Options",
+			"subSections": [
+				{
+					"name": "cidr_sub1",
+					"display": "CIDR field:",
+					"fields": [
+						{
+							"data": "CIDR field Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click.\n⦿default - value on initial display\n⦿readonly - disable input from the user. \n⦿required - when set to ture, input must be provided (empty string is not allowed)",
+							"display": "CIDR field properties",
+							"name": "info_msg_cidr_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "CIDR-1",
+							"default": "12.34.56.78/24",
+							"help": "Enter IP/Mask e.g. 12.34.56.78/24",
+							"name": "cidr_field1",
+							"type": "cidr",
+							"required": true
+						},
+						{
+							"display": "CIDR-2",
+							"default": "1.10.0.1/24",
+							"help": "CIDR-2 is a fixed CIDR address with the value of '1.10.0.1/24'",
+							"name": "cidr_field2",
+							"type": "cidr",
+							"readonly": true
+						},
+						{
+							"display": "CIDR-3",
+							"default": "",
+							"help": "Enter IP/Mask e.g. 12.34.56.78/24 or leave it empty",
+							"name": "cidr_field3",
+							"type": "cidr",
+							"required": false
+						},
+						{
+							"name": "cidr_field_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"data\":\r\n  \"CIDR field Properties:\\n\u29BFhelp - explain input pattern and purpose. can be displayed on \u2754 button click.\\n\u29BFdefault - value on initial display\\n\u29BFreadonly - disable input from the user. \\n\u29BFrequired - when set to ture, input must be provided (empty string is not allowed) \\n\u29BFvalidation - a regular expression that the input must obey\",\r\n  \"display\": \"CIDR field properties\",\r\n  \"name\": \"info_msg_cidr_options\",\r\n  \"severity\": \"info\",\r\n  \"type\": \"message\"\r\n},\r\n{\r\n  \"display\": \"CIDR-1\",\r\n  \"default\": \"12.34.56.78/24\",\r\n  \"help\": \"Enter IP/Mask e.g. 12.34.56.78/24\",\r\n  \"name\": \"cidr_field1\",\r\n  \"type\": \"cidr\",\r\n  \"required\": true\r\n},\r\n{\r\n  \"display\": \"CIDR-2\",\r\n  \"default\": \"1.10.0.1/24\",\r\n  \"help\": \"CIDR-2 is a fixed CIDR with the value of '1.10.0.1/24'\",\r\n  \"name\": \"cidr_field2\",\r\n  \"type\": \"cidr\",\r\n  \"readonly\": true\r\n},\r\n            {\r\n  \"display\": \"CIDR-3\",\r\n  \"default\": \"\",\r\n  \"help\": \"CIDR-3 Enter IP/Mask e.g. 12.34.56.78/24 or leave it empty\",\r\n  \"name\": \"cidr_field3\",\r\n  \"type\": \"cidr\",\r\n  \"required\": false\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ip",
+			"display": "IP field",
+			"description": "IP Options",
+			"subSections": [
+				{
+					"name": "cidr_sub1",
+					"display": "CIDR field:",
+					"fields": [
+						{
+							"data": "IP field Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click.\n⦿default - value on initial display\n⦿readonly - disable input from the user \n⦿required - when set to ture, input must be provided (empty string is not allowed)\n⦿ipv4 - IP address is IPv4 standard format\n⦿ipv6 - IP address is IPv6 standard format",
+							"display": "IP field properties",
+							"name": "info_msg_ip_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "IP - default",
+							"default": "12.34.56.78",
+							"help": "Enter IP e.g. 12.34.56.78",
+							"name": "ip_field1",
+							"type": "ip",
+							"required": true
+						},
+						{
+							"display": "IP - readonly",
+							"default": "1.10.0.1",
+							"help": "Display IP address only",
+							"name": "ip_field2",
+							"type": "ip",
+							"readonly": true
+						},
+						{
+							"display": "IP - required=false",
+							"default": "",
+							"help": "Enter IP e.g. 12.34.56.78 or leave it empty",
+							"name": "ip_field3",
+							"type": "ip",
+							"required": false
+						},
+						{
+							"display": "IP - ipv4=true, ipv6=false",
+							"default": "",
+							"help": "Enter IP e.g. 12.34.56.78 or leave it empty",
+							"name": "ip_field4",
+							"type": "ip",
+							"required": false,
+							"ipv4": true,
+							"ipv6": false
+						},
+						{
+							"display": "IP - ipv4=true",
+							"default": "",
+							"help": "Enter IP e.g. 12.34.56.78 or leave it empty",
+							"name": "ip_field5",
+							"type": "ip",
+							"required": false,
+							"ipv4": true
+						},
+						{
+							"display": "IP - ipv4=false, ipv6=true",
+							"default": "",
+							"help": "Enter IP e.g. 2001:0:85a3::370:7334 or leave it empty",
+							"name": "ip_field6",
+							"type": "ip",
+							"required": false,
+							"ipv4": false,
+							"ipv6": true
+						},
+						{
+							"display": "IP - ipv6=true",
+							"default": "",
+							"help": "Enter IP e.g. 2001:0:85a3::370:7334 or leave it empty",
+							"name": "ip_field7",
+							"type": "ip",
+							"required": false,
+							"ipv6": true
+						},
+						{
+							"display": "IP - ipv4=true, ipv6=true",
+							"default": "",
+							"help": "Enter IP e.g. 12.34.56.78 or 2002:cb0a:3cdd:1::1 or leave it empty",
+							"name": "ip_field8",
+							"type": "ip",
+							"required": false,
+							"ipv4": true,
+							"ipv6": true
+						},
+						{
+							"display": "IP - ipv4=false, ipv6=undefined",
+							"default": "",
+							"help": "Enter IP e.g. 12.34.56.78 or 2002:cb0a:3cdd:1::1 or leave it empty",
+							"name": "ip_field9",
+							"type": "ip",
+							"required": false,
+							"ipv4": false
+						},
+						{
+							"display": "IP - ipv6=false, ipv4=undefined",
+							"default": "",
+							"help": "Enter IP e.g. 12.34.56.78 or 2002:cb0a:3cdd:1::1 or leave it empty",
+							"name": "ip_field10",
+							"type": "ip",
+							"required": false,
+							"ipv6": false
+						},
+						{
+							"name": "c_field_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"IP - default\",\r\n  \"default\": \"12.34.56.78\",\r\n  \"help\": \"Enter IP e.g. 12.34.56.78\",\r\n  \"name\": \"ip_field1\",\r\n  \"type\": \"ip\",\r\n  \"required\": true\r\n},\r\n{\r\n  \"display\": \"IP - readonly\",\r\n  \"default\": \"1.10.0.1\",\r\n  \"help\": \"IP-2 is a fixed IP address with the value of '1.10.0.1'\",\r\n  \"name\": \"ip_field2\",\r\n  \"type\": \"ip\",\r\n  \"readonly\": true\r\n},\r\n            {\r\n  \"display\": \"IP - required=false\",\r\n  \"default\": \"\",\r\n  \"help\": \"Enter IP e.g. 12.34.56.78 or leave it empty\",\r\n  \"name\": \"ip_field3\",\r\n  \"type\": \"ip\",\r\n  \"required\": false\r\n},\r\n{\r\n  \"display\": \"IP - ipv4=true, ipv6=false\",\r\n  \"default\": \"\",\r\n  \"help\": \"Enter IP e.g. 12.34.56.78 or leave it empty\",\r\n  \"name\": \"ip_field4\",\r\n  \"type\": \"ip\",\r\n  \"required\": false,\r\n  \"ipv4\": true,\r\n  \"ipv6\": false\r\n},\r\n{\r\n  \"display\": \"IP - ipv4=false, ipv6=true\",\r\n  \"default\": \"\",\r\n  \"help\": \"Enter IP e.g. 2002:cb0a:3cdd:1::1 or leave it empty\",\r\n  \"name\": \"ip_field5\",\r\n  \"type\": \"ip\",\r\n  \"required\": false,\r\n  \"ipv4\": false,\r\n  \"ipv6\": true\r\n,\n{\n  \"display\": \"IP - ipv4=false, ipv6=true\",\n  \"default\": \"\",\n  \"help\": \"Enter IP e.g. 2002:cb0a:3cdd:1::1 or 10.0.0.12 or leave it empty\",\n  \"name\": \"ip_field6\",\n  \"type\": \"ip\",\n  \"required\": false,\n  \"ipv4\": false,\n  \"ipv6\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

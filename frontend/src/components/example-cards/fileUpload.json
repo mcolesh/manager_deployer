@@ -1,0 +1,67 @@
+{
+	"name": "file_upload",
+	"display": "File Upload",
+	"description": "File Upload",
+	"sections": [
+		{
+			"name": "file_upload",
+			"display": "File Upload",
+			"description": "File Upload",
+			"subSections": [
+				{
+					"name": "File_Upload_Sub1",
+					"display": "File Upload properties:",
+					"fields": [
+						{
+							"data": "File Upload properties:\n⦿accept - decides what is the allowed file type to be uploaded \n⦿maxFileSizeAllowed - limits the maximum size of the file to be uploaded \n⦿validation - a regular expression that the file name must obey\n⦿required - when set to ture, file must be provided (empty  is not allowed)",
+							"display": " props",
+							"name": "info_msg_file_upload_options",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": "",
+							"display": "Standard",
+							"name": "file_upload_1",
+							"type": "file_upload"
+						},
+						{
+							"default": "file@1.txt",
+							"display": "File name validation",
+							"name": "file_upload_2",
+							"type": "file_upload",
+							"validation": "^[A-Za-z0-9:\"[\\].,/_-]*$"
+						},
+						{
+							"default": "file3.txt",
+							"display": "Limited size allowed ",
+							"maxFileSizeAllowed": 2000000,
+							"name": "file_upload_3",
+							"type": "file_upload"
+						},
+						{
+							"default": "file4.txt",
+							"display": "Specific type ",
+							"name": "file_upload_4",
+							"accept": ".tar.gz",
+							"type": "file_upload"
+						},
+						{
+							"default": "",
+							"display": "Required",
+							"name": "file_upload_5",
+							"type": "file_upload",
+							"required": true
+						},
+						{
+							"name": "file_upload_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "   \n            {\n              \"default\": \"\",\n              \"display\": \"File Upload 1\",\n              \"name\": \"file_upload_1\",\n              \"type\": \"file_upload\"\n            },\n            {\n              \"default\": \"file@1.txt\",\n              \"display\": \"File Upload with file name validation\",\n              \"name\": \"file_upload_2\",\n              \"type\": \"file_upload\",\n              \"validation\": \"^[A-Za-z0-9:\\\"[\\\\].,/_-]*$\"\n            },\n            {\n              \"default\": \"file3.txt\",\n              \"display\": \"File Upload with limited size allowed \",\n              \"maxFileSizeAllowed\": 2000000,\n              \"name\": \"file_upload_3\",\n              \"type\": \"file_upload\"\n            },\n            {\n              \"default\": \"file4.txt\",\n              \"display\": \"File Upload with specific type \",\n              \"name\": \"file_upload_4\",\n              \"accept\": \".tar.gz\",\n              \"type\": \"file_upload\"\n            },\n            {\n              \"default\": \"\",\n              \"display\": \"File Upload required\",\n              \"name\": \"file_upload_5\",\n              \"type\": \"file_upload\",\n              \"required\": true\n            }"
+						}
+					]
+				}
+			]
+		}
+	]
+}

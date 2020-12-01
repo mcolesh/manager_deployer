@@ -1,0 +1,170 @@
+﻿{
+	"name": "select",
+	"display": "Select, Multiple-Select and Time-Zone",
+	"description": "Inspect Select, Multiple-Select and TimeZone fields",
+	"sections": [
+		{
+			"name": "select",
+			"display": "Select",
+			"description": "Select Options",
+			"subSections": [
+				{
+					"name": "select_sub1",
+					"display": "Select field:",
+					"fields": [
+						{
+							"data": "Select field Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed)\n⦿allowCreate - indicating whether the user is allowed to add options to the list",
+							"display": "Select properties",
+							"name": "select_info_msg",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": "Option1",
+							"display": "Select (mandatory)",
+							"help": "Select one value from the list",
+							"name": "select_select1",
+							"required": true,
+							"type": "select",
+							"values": ["Option1", "Option2", "Option3", "Option4", "Option5"]
+						},
+						{
+							"default": "",
+							"display": "Select (not mandatory)",
+							"help": "Select one value from the list or leave it empty",
+							"name": "select_select2",
+							"required": false,
+							"type": "select",
+							"values": ["Option1", "Option2", "Option3", "Option4", "Option5"]
+						},
+						{
+							"default": "Option1",
+							"display": "Select (addable)",
+							"help": "Addable drop-down list , i.e. except the default options - 'Option1', 'Option2' and 'Option3', user input can be added as additional options",
+							"name": "select_select3",
+							"allowCreate": true,
+							"type": "select",
+							"values": ["Option1", "Option2", "Option3"]
+						},
+						{
+							"default": "Option4",
+							"display": "Select (readOnly)",
+							"help": "Predefined, readonly field, with the value of Option4",
+							"name": "select_select4",
+							"required": false,
+							"readonly": true,
+							"type": "select",
+							"values": ["Option1", "Option2", "Option3", "Option4", "Option5"]
+						},
+						{
+							"name": "select_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"default\": \"Option1\",\r\n  \"display\": \"Select (mandatory)\",\r\n  \"help\": \"Select one value from the list\",\r\n  \"name\": \"select_select1\",\r\n  \"required\": true,\r\n  \"type\": \"select\",\r\n  \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\", \"Option5\"]\r\n},\r\n{\r\n  \"default\": \"\",\r\n  \"display\": \"Select (not mandatory)\",\r\n  \"help\": \"Select one value from the list or leave it empty\",\r\n  \"name\": \"select_select2\",\r\n  \"required\": false,\r\n  \"type\": \"select\",\r\n  \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\", \"Option5\"]\r\n},\r\n{\r\n  \"default\": \"Option3\",\r\n  \"display\": \"Addable Select\",\r\n  \"help\": \"Addable drop-down list , i.e. except the default options - 'Option1', 'Option2' and 'Option3', user input can be added as additional options\",\r\n  \"name\": \"select_select3\",\r\n  \"allowCreate\": true,\r\n  \"type\": \"select\",\r\n  \"values\": [\"Option1\", \"Option2\", \"Option3\"]\r\n},\r\n{\r\n  \"default\": \"Option4\",\r\n  \"display\": \"Readonly Select\",\r\n  \"help\": \"Predefined, readonly field, with the value of Option4\",\r\n  \"name\": \"select_select4\",\r\n  \"required\": false,\r\n  \"readonly\": true,\r\n  \"type\": \"select\",\r\n  \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\", \"Option5\"]\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "multiple_select",
+			"display": "Multiple Select",
+			"description": "Multiple Select Options",
+			"subSections": [
+				{
+					"name": "multiple_select_sub1",
+					"display": "Multiple Select field:",
+					"fields": [
+						{
+							"data": "Multiple Select field Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed)",
+							"display": "Multiple Select properties",
+							"name": "multiple_select_info_msg",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": ["Option1", "Option4"],
+							"display": "Multiple Select (mandatory)",
+							"help": "Select at least one value from the list",
+							"name": "multiple_select_select1",
+							"required": true,
+							"multiple": true,
+							"type": "select",
+							"values": ["Option1", "Option2", "Option3", "Option4", "Option5"]
+						},
+						{
+							"default": "",
+							"display": "Multiple Select (not mandatory)",
+							"help": "Select values from the list or leave it empty",
+							"name": "multiple_select_select2",
+							"required": false,
+							"multiple": true,
+							"type": "select",
+							"values": ["Option1", "Option2", "Option3", "Option4", "Option5"]
+						},
+						{
+							"default": ["Option5", "Option1"],
+							"display": "Multiple Select (readOnly)",
+							"help": "Predefined readonly field, with the value of Option5 and Option1",
+							"name": "multiple_select_select3",
+							"required": false,
+							"readonly": true,
+							"multiple": true,
+							"type": "select",
+							"values": ["Option1", "Option2", "Option3", "Option4", "Option5"]
+						},
+						{
+							"name": "multiple_select_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"default\": [\"Option1\", \"Option4\"],\r\n  \"display\": \"Multiple Select (mandatory)\",\r\n  \"help\": \"Select at least one value from the list\",\r\n  \"name\": \"multiple_select_select1\",\r\n  \"required\": true,\r\n  \"multiple\": true,\r\n  \"type\": \"select\",\r\n  \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\", \"Option5\"]\r\n},\r\n{\r\n  \"default\": \"\",\r\n  \"display\": \"Multiple Select (not mandatory)\",\r\n  \"help\": \"Select values from the list or leave it empty\",\r\n  \"name\": \"multiple_select_select2\",\r\n  \"required\": false,\r\n  \"multiple\": true,\r\n  \"type\": \"select\",\r\n  \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\", \"Option5\"]\r\n},\r\n{\r\n  \"default\": [\"Option5\", \"Option1\"],\r\n  \"display\": \"Readonly Multiple Select\",\r\n  \"help\": \"Predefined readonly field, with the value of Option5 and Option1\",\r\n  \"name\": \"multiple_select_select3\",\r\n  \"required\": false,\r\n  \"readonly\": true,\r\n  \"multiple\": true,\r\n  \"type\": \"select\",\r\n  \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\", \"Option5\"]\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "time_zone",
+			"display": "Time Zone",
+			"description": "Time Zone Options",
+			"subSections": [
+				{
+					"name": "time_zone_sub1",
+					"display": "Time Zone field:",
+					"fields": [
+						{
+							"data": "Time Zone field Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - value on initial display\n⦿readonly - disable input from the user\n⦿required - when set to ture, input must be provided (empty string is not allowed)",
+							"display": "Time Zone properties",
+							"name": "time_zone_info_msg",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"default": "UTC",
+							"help": "Predefined Time Zone field set to 'UTC'",
+							"display": "Time Zone (mandatory)",
+							"name": "time_zone1",
+							"required": true,
+							"type": "timezone"
+						},
+						{
+							"default": "Israel",
+							"help": "Predefined readonly Time Zone field set to 'israel'",
+							"display": "Time Zone (readOnly)",
+							"name": "time_zone2",
+							"readonly": true,
+							"required": true,
+							"type": "timezone"
+						},
+						{
+							"name": "time_zone_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"default\": \"UTC\",\r\n  \"help\": \"Predefined Time Zone field set to 'UTC'\",\r\n  \"display\": \"Time Zone (mandatory)\",\r\n  \"name\": \"time_zone1\",\r\n  \"required\": true,\r\n  \"type\": \"timezone\"\r\n},\r\n{\r\n  \"default\": \"Israel\",\r\n  \"help\": \"Predefined readonly Time Zone field set to 'israel'\",\r\n  \"display\": \"Readonly Time Zone\",\r\n  \"name\": \"time_zone2\",\r\n  \"readonly\": true,\r\n  \"required\": true,\r\n  \"type\": \"timezone\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

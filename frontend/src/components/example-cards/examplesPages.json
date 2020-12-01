@@ -1,0 +1,91 @@
+{
+	"display": "Examples",
+	"name": "cbis_examples",
+	"pages": [
+		{
+			"name": "select",
+			"display": "Select",
+			"description": "Select, MultipleSelect and TimeZone"
+		},
+		{
+			"name": "showIf",
+			"display": "ShowIf Examples",
+			"description": "Basic/Legacy mode: one parent, one expected value, and/or/not operands.\n\nAdvanced mode: build your own logical statement, multiple parents, multiple operands and build in functions."
+		},
+		{
+			"name": "switch",
+			"display": "Switch",
+			"description": "Toggle switch (on/off button)"
+		},
+		{
+			"name": "inputFields",
+			"display": "Input fields",
+			"description": "Text, password, cidr and ip field types"
+		},
+		{
+			"name": "number",
+			"display": "Number",
+			"description": "Input element for numbers"
+		},
+		{
+			"name": "addresslist",
+			"display": "Address list",
+			"description": "List of IP/Host addresses"
+		},
+		{
+			"name": "dynamicSubsection",
+			"display": "Dynamic Subsection",
+			"description": "Mutable number of subsections, driven from a subsection template"
+		},
+		{
+			"name": "slider",
+			"display": "Slider",
+			"description": "Select a number from a defined discrete range"
+		},
+		{
+			"name": "hyperlink",
+			"display": "Hyperlink",
+			"description": "Open user links"
+		},
+		{
+			"name": "textarea",
+			"display": "Textarea",
+			"description": "Input element for textareas"
+		},
+		{
+			"name": "disallowDuplicates",
+			"display": "Disallow duplicates in lists",
+			"description": "Disallow duplicates in specific lists"
+		},
+		{
+			"name": "dependentList",
+			"display": "Dependent List",
+			"description": "List of items, defined according to selected option"
+		},
+		{
+			"name": "subsectionsTuple",
+			"display": "Subsections Tuple",
+			"description": "For each subsection from section A match a subsection from section B"
+		},
+		{
+			"name": "fileUpload",
+			"display": "File Upload",
+			"description": "File Uploader "
+		},
+		{
+			"name": "grid",
+			"display": "Grid",
+			"description": "Data Grid "
+		},
+		{
+			"name": "genericRange",
+			"display": "Generic Range",
+			"description": "Batch of Number component, with shared min and max value, which can be set start and end value for each Number"
+		},
+		{
+			"name": "genericSelect",
+			"display": "Generic Select",
+			"description": "Batch of Select component, with the same options"
+		}
+	]
+}

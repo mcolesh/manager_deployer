@@ -1,0 +1,27 @@
+.text-area-container .textAreaContainer {
+	display: flex !important;
+	max-width: unset !important;
+}
+
+.text-area-container .textAreaContainer #ipmi-textArea {
+	max-height: 240px !important;
+}
+
+.ant-card-actions {
+	border-top: 1px solid #000000 !important;
+}
+
+.ant-card-head {
+	border-bottom: 1px solid #000000 !important;
+	background: #e2fade !important;
+}
+
+.ant-card-bordered {
+	border: 1px solid #000000 !important;
+}
+
+#add-zone-btn-button,
+#add-pool-btn-button,
+#add-rack-btn-button {
+	margin-left: 5px;
+}

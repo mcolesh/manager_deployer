@@ -1,0 +1,73 @@
+{
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true,
+			"modules": true
+		}
+	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"paths": ["src", "cypress"]
+			}
+		}
+	},
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"extends": ["airbnb", "plugin:prettier/recommended"],
+	"plugins": ["react"],
+	"rules": {
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"react/jsx-closing-bracket-location": [
+			1,
+			{ "selfClosing": "line-aligned", "nonEmpty": "after-props" }
+		],
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"react/require-default-props": "off",
+		"react/jsx-curly-newline": "off",
+		"react/jsx-fragments": ["warn", "element"],
+		"no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+		"react/button-has-type": "off",
+		"camelcase": [
+			"error",
+			{
+				"allow": [
+					"^UNSAFE_",
+					"host_group",
+					"force_multiple_pools",
+					"force_racks",
+					"readonly_racks",
+					"supported_hw_pools",
+					"supported_racks",
+					"rack_location",
+					"ipmi_ips",
+					"availability_zone",
+					"pm_addr",
+					"pages_states",
+					"pages_availability",
+					"page_name"
+				]
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": ["json-mock-server/**"],
+			"rules": {
+				"camelcase": "off"
+			}
+		},
+		{
+			"files": ["PrerequisitesModal.js", "Subsection.js"],
+			"rules": {
+				"react/jsx-props-no-spreading": "off"
+			}
+		}
+	]
+}

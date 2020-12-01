@@ -1,0 +1,334 @@
+{
+	"name": "grid",
+	"display": "Grid",
+	"description": "File Upload",
+	"sections": [
+		{
+			"name": "grid",
+			"display": "Grid",
+			"description": "Grid",
+			"dataSource": "sub1DataSource",
+			"subSections": [
+				{
+					"ShouldBeDeleted": false,
+					"default": {
+						"infoMsgGridOptions": "Grid With DataSource properties:\n⦿columns - specify the grid columns and their types and properties \n⦿operations - decides the allowed operations for grid row (delete, add, edit) \n⦿emptyGridDisplay - message to show when grid is empty\n⦿newItemDisplay - sets the row add dialog title\n⦿deleteItemDisplay - sets the row delete dialog title\n⦿editItemDisplay - sets the row edit dialog title\n⦿isDataSource - detect that this grid have a columns its values are drived from dataSource ",
+						"grid1": [
+							{
+								"col1": "row 1",
+								"col2": 40
+							},
+							{
+								"col1": "row 2",
+								"col2": 25
+							},
+							{
+								"col1": "row 3",
+								"col2": 17
+							}
+						],
+						"grid2": [],
+						"grid3": [
+							{
+								"col1": "row 1",
+								"col2": 30
+							},
+							{
+								"col1": "row 2",
+								"col2": 30
+							},
+							{
+								"col1": "row 3",
+								"col2": 30
+							}
+						],
+						"unique-grid": [
+							{
+								"uniqueCol1": "row 1",
+								"uniqueCol2": 20
+							},
+							{
+								"uniqueCol1": "row 2",
+								"uniqueCol2": 30
+							},
+							{
+								"uniqueCol1": "row 3",
+								"uniqueCol2": 40
+							}
+						],
+						"gridJson": "{\r\n \"name\":\"grid\",\r\n \"display\":\"Grid\",\r\n \"description\":\"Grid\",\r\n \"dataSource\":\"sub1DataSource\",\r\n \"subSections\":[\r\n{\r\n \"ShouldBeDeleted\":false,\r\n \"default\":{\"grid1\":[\r\n{\r\n \"col1\":\"row1\",\r\n \"col2\":40\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":25\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":17\r\n}\r\n],\r\n \"grid2\":[],\r\n \"grid3\":[{\r\n \"col1\":\"row1\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":30\r\n}],\r\n \"gridJson\":\"\"\r\n \r\n},\r\n \"display\":\"Grid\",\r\n \"name\":\"gridSub-1\"\r\n}\r\n],\r\n \"isExtendable\":true,\r\n \"subsectionTemplateFields\":[{\r\n \"display\":\"props\",\r\n \"name\":\"infoMsgGridOptions\",\r\n \"severity\":\"info\",\r\n \"type\":\"message\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"col1\",\r\n \"help\":\"gridcolumn1\",\r\n \"name\":\"col1\",\r\n \"readonly\":false,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n{\r\n \"display\":\"col2\",\r\n \"help\":\"gridcol2\",\r\n \"name\":\"col2\",\r\n \"restrictions\":{\r\n \"max\":100,\r\n \"min\":0\r\n},\r\n \"type\":\"number\"\r\n}\r\n],\r\n \"default\":[\r\n{\r\n \"col1\":\"row1\",\r\n \"col2\":40\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":25\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":17\r\n}\r\n],\r\n \"display\":\"Gridwithroweditoperations\",\r\n \"editItemDisplay\":\"editrowdata\",\r\n \"newItemDisplay\":\"\",\r\n \"emptyGridDisplay\":\"emptygrid\",\r\n \"name\":\"grid1\",\r\n \"operations\":{\r\n \"Add\":false,\r\n \"Delete\":false,\r\n \"Edit\":true\r\n},\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"col1\",\r\n \"help\":\"gridcolumn1\",\r\n \"name\":\"col1\",\r\n \"readonly\":false,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n{\r\n \"display\":\"col2\",\r\n \"help\":\"gridcol2\",\r\n \"name\":\"col2\",\r\n \"restrictions\":{\r\n \"max\":100,\r\n \"min\":0\r\n},\r\n \"type\":\"number\"\r\n}\r\n],\r\n \"default\":[],\r\n \"display\":\"Gridwithrowaddoperation\",\r\n \"newItemDisplay\":\"\",\r\n \"emptyGridDisplay\":\"emptygrid\",\r\n \"name\":\"grid2\",\r\n \"operations\":{\r\n \"Add\":true,\r\n \"Delete\":false,\r\n \"Edit\":false\r\n},\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"col1\",\r\n \"help\":\"gridcolumn1\",\r\n \"name\":\"col1\",\r\n \"readonly\":true,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n{\r\n \"display\":\"col2\",\r\n \"help\":\"gridcol2\",\r\n \"name\":\"col2\",\r\n \"restrictions\":{\r\n \"max\":100,\r\n \"min\":0\r\n},\r\n \"type\":\"number\"\r\n}\r\n],\r\n \"default\":[\r\n{\r\n \"col1\":\"row1\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":30\r\n}\r\n],\r\n \"display\":\"Gridwithdeletablerows\",\r\n \"deleteItemDisplay\":\"Delete\",\r\n \"emptyGridDisplay\":\"nodatatodisplay\",\r\n \"name\":\"grid3\",\r\n \"operations\":{\r\n \"Add\":false,\r\n \"Delete\":true,\r\n \"Edit\":false\r\n},\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"Unique col 1\",\r\n \"help\":\"Duplicated value are not allowed when adding or editing any item in uniqueCol1\",\r\n \"name\":\"uniqueCol1\",\r\n \"readonly\":false,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n{\r\n \"display\":\"Unique col 2\",\r\n \"help\":\"Duplicated value are not allowed when adding or editing any item in uniqueCol2\",\r\n \"name\":\"uniqueCol2\",\r\n \"restrictions\":{\r\n \"max\":100,\r\n \"min\":0\r\n},\r\n \"type\":\"number\"\r\n}\r\n],\r\n \"default\":[\r\n{\r\n \"uniqueCol1\":\"row1\",\r\n \"uniqueCol2\":20\r\n},\r\n{\r\n \"uniqueCol1\":\"row2\",\r\n \"uniqueCol2\":30\r\n},\r\n{\r\n \"uniqueCol1\":\"row3\",\r\n \"uniqueCol2\":40\r\n}\r\n],\r\n \"display\":\"Grid with unique columns\",\r\n \"editItemDisplay\":\"edit row data\",\r\n \"newItemDisplay\":\"\",\r\n \"emptyGridDisplay\":\"empty grid\",\r\n \"name\":\"unique-grid\",\r\n \"operations\":{\r\n \"Add\":true,\r\n \"Delete\":false,\r\n \"Edit\":true\r\n},\r\n \"uniqueColumns\":[\"uniqueCol1\", \"uniqueCol2\"],\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"name\":\"gridJson\",\r\n \"display\":\"SourceCode\",\r\n \"type\":\"editor\",\r\n \"default\":\"{}\"\r\n}]\r\n}"
+					},
+					"display": "Grid",
+					"name": "gridSub-1"
+				}
+			],
+			"isExtendable": true,
+			"subsectionTemplateFields": [
+				{
+					"data": "Grid properties:\n⦿columns - specify the grid columns and their types and properties \n⦿operations - decides the allowed operations for grid row (delete, add, edit) \n⦿emptyGridDisplay - message to show when grid is empty\n⦿newItemDisplay - sets the row add dialog title\n⦿deleteItemDisplay - sets the row delete dialog title\n⦿editItemDisplay - sets the row edit dialog title",
+					"display": " props",
+					"name": "infoMsgGridOptions",
+					"severity": "info",
+					"type": "message"
+				},
+				{
+					"columns": [
+						{
+							"display": "col 1",
+							"help": "grid column 1",
+							"name": "col1",
+							"readonly": false,
+							"required": true,
+							"type": "text"
+						},
+						{
+							"display": "col 2",
+							"help": "grid col 2",
+							"name": "col2",
+							"restrictions": {
+								"max": 100,
+								"min": 0
+							},
+							"type": "number"
+						}
+					],
+					"default": [
+						{
+							"col1": "row 1",
+							"col2": 40
+						},
+						{
+							"col1": "row 2",
+							"col2": 25
+						},
+						{
+							"col1": "row 3",
+							"col2": 17
+						}
+					],
+					"display": "Grid with row edit operations",
+					"editItemDisplay": "edit row data",
+					"newItemDisplay": "",
+					"emptyGridDisplay": "empty grid",
+					"name": "grid1",
+					"operations": {
+						"Add": false,
+						"Delete": false,
+						"Edit": true
+					},
+					"type": "grid"
+				},
+				{
+					"columns": [
+						{
+							"display": "col 1",
+							"help": "grid column 1",
+							"name": "col1",
+							"readonly": false,
+							"required": true,
+							"type": "text"
+						},
+						{
+							"display": "col 2",
+							"help": "grid col 2",
+							"name": "col2",
+							"restrictions": {
+								"max": 100,
+								"min": 0
+							},
+							"type": "number"
+						}
+					],
+					"default": [],
+					"display": "Grid with row add operation",
+					"newItemDisplay": "",
+					"emptyGridDisplay": "empty grid",
+					"name": "grid2",
+					"operations": {
+						"Add": true,
+						"Delete": false,
+						"Edit": false
+					},
+					"type": "grid"
+				},
+				{
+					"columns": [
+						{
+							"display": "col 1",
+							"help": "grid column 1",
+							"name": "col1",
+							"readonly": true,
+							"required": true,
+							"type": "text"
+						},
+						{
+							"display": "col 2",
+							"help": "grid col 2",
+							"name": "col2",
+							"restrictions": {
+								"max": 100,
+								"min": 0
+							},
+							"type": "number"
+						}
+					],
+					"default": [
+						{
+							"col1": "row 1",
+							"col2": 30
+						},
+						{
+							"col1": "row 2",
+							"col2": 30
+						},
+						{
+							"col1": "row 3",
+							"col2": 30
+						}
+					],
+					"display": "Grid with deletable rows",
+					"deleteItemDisplay": "Delete",
+					"emptyGridDisplay": "no data to display",
+					"name": "grid3",
+					"operations": {
+						"Add": false,
+						"Delete": true,
+						"Edit": false
+					},
+					"type": "grid"
+				},
+				{
+					"columns": [
+						{
+							"display": "Unique col 1",
+							"help": "Duplicated value are not allowed when adding or editing any item in uniqueCol1",
+							"name": "uniqueCol1",
+							"readonly": false,
+							"required": true,
+							"type": "text"
+						},
+						{
+							"display": "Unique col 2",
+							"help": "Duplicated value are not allowed when adding or editing any item in uniqueCol2",
+							"name": "uniqueCol2",
+							"restrictions": {
+								"max": 100,
+								"min": 0
+							},
+							"type": "number"
+						}
+					],
+					"default": [
+						{
+							"uniqueCol1": "row 1",
+							"uniqueCol2": 40
+						},
+						{
+							"uniqueCol1": "row 2",
+							"uniqueCol2": 25
+						},
+						{
+							"uniqueCol1": "row 3",
+							"uniqueCol2": 17
+						}
+					],
+					"display": "Grid with unique columns",
+					"editItemDisplay": "edit row data",
+					"newItemDisplay": "",
+					"emptyGridDisplay": "empty grid",
+					"name": "unique-grid",
+					"operations": {
+						"Add": true,
+						"Delete": false,
+						"Edit": true
+					},
+					"uniqueColumns": ["uniqueCol1", "uniqueCol2"],
+					"type": "grid"
+				},
+				{
+					"name": "gridJson",
+					"display": "Source Code",
+					"type": "editor",
+					"default": "{\r\n \"name\":\"grid\",\r\n \"display\":\"Grid\",\r\n \"description\":\"Grid\",\r\n \"dataSource\":\"sub1DataSource\",\r\n \"subSections\":[\r\n{\r\n \"ShouldBeDeleted\":false,\r\n \"default\":{\"grid1\":[\r\n{\r\n \"col1\":\"row1\",\r\n \"col2\":40\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":25\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":17\r\n}\r\n],\r\n \"grid2\":[],\r\n \"grid3\":[{\r\n \"col1\":\"row1\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":30\r\n}],\r\n \"gridJson\":\"\"\r\n \r\n},\r\n \"display\":\"Grid\",\r\n \"name\":\"gridSub-1\"\r\n}\r\n],\r\n \"isExtendable\":true,\r\n \"subsectionTemplateFields\":[{\r\n \"display\":\"props\",\r\n \"name\":\"infoMsgGridOptions\",\r\n \"severity\":\"info\",\r\n \"type\":\"message\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"col1\",\r\n \"help\":\"gridcolumn1\",\r\n \"name\":\"col1\",\r\n \"readonly\":false,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n{\r\n \"display\":\"col2\",\r\n \"help\":\"gridcol2\",\r\n \"name\":\"col2\",\r\n \"restrictions\":{\r\n \"max\":100,\r\n \"min\":0\r\n},\r\n \"type\":\"number\"\r\n}\r\n],\r\n \"default\":[\r\n{\r\n \"col1\":\"row1\",\r\n \"col2\":40\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":25\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":17\r\n}\r\n],\r\n \"display\":\"Gridwithroweditoperations\",\r\n \"editItemDisplay\":\"editrowdata\",\r\n \"newItemDisplay\":\"\",\r\n \"emptyGridDisplay\":\"emptygrid\",\r\n \"name\":\"grid1\",\r\n \"operations\":{\r\n \"Add\":false,\r\n \"Delete\":false,\r\n \"Edit\":true\r\n},\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"col1\",\r\n \"help\":\"gridcolumn1\",\r\n \"name\":\"col1\",\r\n \"readonly\":false,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n{\r\n \"display\":\"col2\",\r\n \"help\":\"gridcol2\",\r\n \"name\":\"col2\",\r\n \"restrictions\":{\r\n \"max\":100,\r\n \"min\":0\r\n},\r\n \"type\":\"number\"\r\n}\r\n],\r\n \"default\":[],\r\n \"display\":\"Gridwithrowaddoperation\",\r\n \"newItemDisplay\":\"\",\r\n \"emptyGridDisplay\":\"emptygrid\",\r\n \"name\":\"grid2\",\r\n \"operations\":{\r\n \"Add\":true,\r\n \"Delete\":false,\r\n \"Edit\":false\r\n},\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"col1\",\r\n \"help\":\"gridcolumn1\",\r\n \"name\":\"col1\",\r\n \"readonly\":true,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n{\r\n \"display\":\"col2\",\r\n \"help\":\"gridcol2\",\r\n \"name\":\"col2\",\r\n \"restrictions\":{\r\n \"max\":100,\r\n \"min\":0\r\n},\r\n \"type\":\"number\"\r\n}\r\n],\r\n \"default\":[\r\n{\r\n \"col1\":\"row1\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row2\",\r\n \"col2\":30\r\n},\r\n{\r\n \"col1\":\"row3\",\r\n \"col2\":30\r\n}\r\n],\r\n \"display\":\"Gridwithdeletablerows\",\r\n \"deleteItemDisplay\":\"Delete\",\r\n \"emptyGridDisplay\":\"nodatatodisplay\",\r\n \"name\":\"grid3\",\r\n \"operations\":{\r\n \"Add\":false,\r\n \"Delete\":true,\r\n \"Edit\":false\r\n},\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"name\":\"gridJson\",\r\n \"display\":\"SourceCode\",\r\n \"type\":\"editor\",\r\n \"default\":\"{}\"\r\n}]\r\n}"
+				}
+			]
+		},
+		{
+			"name": "gridDataSource",
+			"display": "Grid with dataSource",
+			"description": "Grid with dataSource",
+			"subSections": [
+				{
+					"name": "gridSub-2",
+					"display": "Grid With DataSource",
+					"fields": [
+						{
+							"data": "Grid With DataSource properties:\n⦿columns - specify the grid columns and their types and properties \n⦿operations - decides the allowed operations for grid row (delete, add, edit) \n⦿emptyGridDisplay - message to show when grid is empty\n⦿newItemDisplay - sets the row add dialog title\n⦿deleteItemDisplay - sets the row delete dialog title\n⦿editItemDisplay - sets the row edit dialog title\n⦿isDataSource - detect that this grid have a columns its values are drived from dataSource ",
+							"display": " props",
+							"name": "infoMsgGridOptions1",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"columns": [
+								{
+									"display": "col 1",
+									"help": "grid column 1",
+									"name": "col1",
+									"readonly": false,
+									"required": true,
+									"type": "text"
+								},
+
+								{
+									"dataSource": "sub1DataSource",
+									"default": "",
+									"display": "grid column 2",
+									"multiple": true,
+									"name": "col2",
+									"required": true,
+									"type": "select",
+									"values": []
+								},
+								{
+									"dataSource": "sub1DataSource",
+									"default": "",
+									"display": "grid column 3",
+									"multiple": false,
+									"name": "col3",
+									"type": "select",
+									"values": []
+								}
+							],
+							"default": [
+								{
+									"col3": "",
+									"col2": [],
+									"col1": " grid col 1"
+								}
+							],
+							"isDataSource": true,
+							"display": "Grid with dataSource",
+							"editItemDisplay": "edit row data",
+							"emptyGridDisplay": "Interface Per Port configuration",
+							"help": "grid with dataSource",
+							"name": "dataSourceGrid",
+							"operations": {
+								"Add": false,
+								"Delete": false,
+								"Edit": true
+							},
+							"type": "grid"
+						},
+						{
+							"name": "grid1Json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n \"name\":\"gridDataSource\",\r\n \"display\":\"GridwithdataSource\",\r\n \"description\":\"GridwithdataSource\",\r\n \"subSections\":[\r\n{\r\n \"name\":\"gridSub-2\",\r\n \"display\":\"GridWithDataSource\",\r\n \"fields\":[\r\n{\r\n \"display\":\"props\",\r\n \"name\":\"infoMsgGridOptions1\",\r\n \"severity\":\"info\",\r\n \"type\":\"message\"\r\n},\r\n{\r\n \"columns\":[\r\n{\r\n \"display\":\"col1\",\r\n \"help\":\"gridcolumn1\",\r\n \"name\":\"col1\",\r\n \"readonly\":false,\r\n \"required\":true,\r\n \"type\":\"text\"\r\n},\r\n \r\n{\r\n \"dataSource\":\"sub1DataSource\",\r\n \"default\":\"\",\r\n \"display\":\"gridcolumn2\",\r\n \"multiple\":true,\r\n \"name\":\"col2\",\r\n \"required\":true,\r\n \"type\":\"select\",\r\n \"values\":[]\r\n},\r\n{\r\n \r\n\"dataSource\":\"sub1DataSource\",\r\n \"default\":\"\",\r\n \"display\":\"gridcolumn3\",\r\n \"multiple\":false,\r\n \"name\":\"col3\",\r\n \"type\":\"select\",\r\n \"values\":[]\r\n}\r\n],\r\n \"default\":[\r\n{\r\n \"col3\":\"\",\r\n \"col2\":[],\r\n \"col1\":\"gridcol1\"\r\n}\r\n],\r\n \"isDataSource\":true,\r\n \"display\":\"GridwithdataSource\",\r\n \"editItemDisplay\":\"editrowdata\",\r\n \"emptyGridDisplay\":\"InterfacePerPortconfiguration\",\r\n \"help\":\"gridwithdataSource\",\r\n \"name\":\"dataSourceGrid\",\r\n \"operations\":{\r\n \"Add\":false,\r\n \"Delete\":false,\r\n \"Edit\":true\r\n},\r\n \"type\":\"grid\"\r\n},\r\n{\r\n \"name\":\"grid1Json\",\r\n \"display\":\"SourceCode\",\r\n \"type\":\"editor\",\r\n \"default\":\"\"\r\n}]\r\n}\r\n]\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

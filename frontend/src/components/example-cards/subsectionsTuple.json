@@ -1,0 +1,227 @@
+{
+	"name": "subsectionsTuple",
+	"display": "Subsections Tuple Setup",
+	"description": "For each subsection from section A match a subsection from section B",
+	"sections": [
+		{
+			"name": "section_setup",
+			"display": "Example Section Setup",
+			"description": "Options and instructions",
+			"subSections": [
+				{
+					"name": "section_setup_sub",
+					"display": "Subsections Tuple field Setup:",
+					"fields": [
+						{
+							"data": "Subsections Tuple Field:\n Field Definition: Given two sections, A and B, with subsections [a1,a2..] and [b1,b2..] respectively. We would like to match A's subsections to B's subsections.\n Notice: two subsections from A can be matched to the same subsection from B.\n In our example:\nGiven 'Network' and 'Group' sections, with subsections [Network-1,Network-2] and [Group-1,Group-2] respectively.\nAvailable matches are:\n[[(Network-1,Group-1),(Network-2,Group1)],\n[[(Network-1,Group-1),(Network-2,Group2)]\n[[(Network-1,Group-2),(Network-2,Group1)]\n[[(Network-2,Group-2),(Network-2,Group2)]]\nSubsections Tuple Properties:\n⦿ help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿ tuple -  { items : <Section A name, see Field Definition, in our example the 'Network' section> ,\nvalues : <Section B name, see Field Definition, in our example the 'Group' section> }\n⦿ readonly - disable field, false by default\n⦿ useFirstAsDefault – Takes values section first subsection to to be the default selection for items subsections,  when not defined default option is set none\n⦿ default- define for each subsection from items section a subsection from values section, when not defined the default option is set to none\n⦿ required - when set to ture, input must be provided (empty string is not allowed)",
+							"display": "Subsections Tuple field properties",
+							"name": "subsections_tuple_field_properties",
+							"severity": "info",
+							"type": "message",
+							"maxHeight": 600
+						},
+						{
+							"name": "network_group_subsections_tuple_default",
+							"display": "Network/Group Tuple (Predefined)",
+							"help": "match for each network item in Network dynamic section a group from Groups dynamic section",
+							"tuple": { "items": "Network", "values": "Group" },
+							"type": "subsections-tuple",
+							"default": {
+								"Network-1": "Group-2",
+								"Network-2": "Group-1"
+							}
+						},
+						{
+							"name": "network_group_subsections_tuple_first_as_default",
+							"display": "Network/Group Tuple (First as default)",
+							"help": "match for each network item in Network dynamic section a group from Groups dynamic section",
+							"tuple": { "items": "Network", "values": "Group" },
+							"useFirstAsDefault": true,
+							"type": "subsections-tuple"
+						},
+						{
+							"name": "network_group_subsections_tuple_default_required",
+							"display": "Network/Group Tuple (Required)",
+							"help": "match for each network item in Network dynamic section a group from Groups dynamic section",
+							"tuple": { "items": "Network", "values": "Group" },
+							"required": true,
+							"type": "subsections-tuple",
+							"default": {
+								"Network-1": ""
+							}
+						},
+						{
+							"name": "network_group_subsections_tuple_readonly",
+							"display": "Network/Group Tuple (Readonly)",
+							"help": "match for each network item in Network dynamic section a group from Groups dynamic section",
+							"tuple": { "items": "Network", "values": "Group" },
+							"readonly": true,
+							"type": "subsections-tuple",
+							"default": {
+								"Network-1": "Group-2",
+								"Network-2": "Group-1"
+							}
+						},
+						{
+							"name": "subsections_tuple_json",
+							"display": "Subsections Tuple Fields Source Code",
+							"type": "editor",
+							"height": "40em",
+							"default": "{\r\n  \"name\": \"network_group_subsections_tuple_default\",\r\n  \"display\": \"Network/Group Tuple (Predefined)\",\r\n  \"help\": \"match for each network item in Network dynamic section a group from Groups dynamic section\",\r\n  \"tuple\": { \"items\": \"Network\", \"values\": \"Group\"},\r\n  \"type\": \"subsections_tuple\",\r\n  \"default\": {\r\n    \"Network-1\": \"Group-2\",\r\n    \"Network-2\": \"Group-1\"\r\n  }\r\n},\r\n{\r\n  \"name\": \"network_group_subsections_tuple_first_as_default\",\r\n  \"display\": \"Network/Group Tuple (First as default)\",\r\n  \"help\": \"match for each network item in Network dynamic section a group from Groups dynamic section\",\r\n  \"tuple\": { \"items\": \"Network\", \"values\": \"Group\"},\r\n  \"useFirstAsDefault\": true,\r\n  \"type\": \"subsections_tuple\"\r\n},\r\n{\r\n  \"name\": \"network_group_subsections_tuple_default_required\",\r\n  \"display\": \"Network/Group Tuple (Required)\",\r\n  \"help\": \"match for each network item in Network dynamic section a group from Groups dynamic section\",\r\n  \"tuple\": { \"items\": \"Network\", \"values\": \"Group\"},\r\n  \"required\": true,\r\n  \"type\": \"subsections_tuple\",\r\n  \"default\": {\r\n    \"Network-1\": \"\"\r\n  }\r\n},\r\n{\r\n  \"name\": \"network_group_subsections_tuple_readonly\",\r\n  \"display\": \"Network/Group Tuple (Readonly)\",\r\n  \"help\": \"match for each network item in Network dynamic section a group from Groups dynamic section\",\r\n  \"tuple\": { \"items\": \"Network\", \"values\": \"Group\"},\r\n  \"readonly\": true,\r\n  \"type\": \"subsections_tuple\",\r\n  \"default\": {\r\n    \"Network-1\": \"Group-2\",\r\n    \"Network-2\": \"Group-1\"\r\n  }\r\n}"
+						},
+						{
+							"name": "dynamic_sections_json",
+							"display": "Dynamic Sections Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"Network Section\",\r\n  \"description\": \"Example - Row\",\r\n  \"dataSource\": \"networks\",\r\n  \"isExtendable\": true,\r\n  \"limitMaxSubsections\": \"10\",\r\n  \"name\": \"Network\",\r\n  \"subSections\": [\r\n    {\r\n      \"ShouldBeDeleted\": false,\r\n      \"default\": {\r\n        \"flipper\": true,\r\n        \"number\": 40,\r\n        \"select\": [\"Option1\"],\r\n        \"subsections\": [\"Option2\"]\r\n      },\r\n      \"description\": \"This is the first subsection\",\r\n      \"display\": \"Network-1\",\r\n      \"name\": \"Network-1\"\r\n    },\r\n    {\r\n      \"ShouldBeDeleted\": true,\r\n      \"default\": {\r\n        \"flipper\": true,\r\n        \"number\": 40,\r\n        \"select\": [\"Option2\"],\r\n        \"subsections\": [\"Option3\"]\r\n      },\r\n      \"description\": \"This is the second subsection\",\r\n      \"display\": \"Network-2\",\r\n      \"name\": \"Network-2\"\r\n    }\r\n  ],\r\n  \"subsectionTemplateFields\": [\r\n    {\r\n      \"default\": false,\r\n      \"display\": \"Flipper\",\r\n      \"name\": \"flipper\",\r\n      \"type\": \"boolean\"\r\n    },\r\n    {\r\n      \"default\": 3,\r\n      \"display\": \"Choose a Number\",\r\n      \"name\": \"number\",\r\n      \"required\": true,\r\n      \"restrictions\": {\r\n        \"max\": 50,\r\n        \"min\": 0\r\n      },\r\n      \"type\": \"number\"\r\n    },\r\n    {\r\n      \"default\": \"option1\",\r\n      \"display\": \"Select one option\",\r\n      \"name\": \"select\",\r\n      \"required\": true,\r\n      \"type\": \"select\",\r\n      \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\"]\r\n    },\r\n    {\r\n      \"dataSource\": \"group-of-subsections\",\r\n      \"default\": [\"Option1\"],\r\n      \"display\": \"Choose multiple subsections\",\r\n      \"multiple\": true,\r\n      \"name\": \"subsections\",\r\n      \"required\": true,\r\n      \"type\": \"select\",\r\n      \"useFirstAsDefault\": true,\r\n      \"values\": [\"Option1\", \"Option2\", \"Option3\"]\r\n    }\r\n  ]\r\n},\r\n{\r\n  \"display\": \"Groups Section\",\r\n  \"description\": \"Example - Column\",\r\n  \"dataSource\": \"groups\",\r\n  \"isExtendable\": true,\r\n  \"limitMaxSubsections\": \"10\",\r\n  \"name\": \"Group\",\r\n  \"subSections\": [\r\n    {\r\n      \"ShouldBeDeleted\": false,\r\n      \"default\": {\r\n        \"flipper\": true,\r\n        \"number\": 40,\r\n        \"select\": \"Option1\",\r\n        \"subsections\": [\"Option3\"]\r\n      },\r\n      \"description\": \"This is the first subsection\",\r\n      \"display\": \"Group-1\",\r\n      \"name\": \"Group-1\"\r\n    },\r\n    {\r\n      \"ShouldBeDeleted\": false,\r\n      \"default\": {\r\n        \"flipper\": true,\r\n        \"number\": 40,\r\n        \"select\": \"Option1\",\r\n        \"subsections\": [\"Option2\"]\r\n      },\r\n      \"description\": \"This is the first subsection\",\r\n      \"display\": \"Group-2\",\r\n      \"name\": \"Group-2\"\r\n    }\r\n  ],\r\n  \"subsectionTemplateFields\": [\r\n    {\r\n      \"default\": false,\r\n      \"display\": \"Flipper\",\r\n      \"name\": \"flipper\",\r\n      \"type\": \"boolean\"\r\n    },\r\n    {\r\n      \"default\": 3,\r\n      \"display\": \"Choose a Number\",\r\n      \"name\": \"number\",\r\n      \"required\": true,\r\n      \"restrictions\": {\r\n        \"max\": 50,\r\n        \"min\": 0\r\n      },\r\n      \"type\": \"number\"\r\n    },\r\n    {\r\n      \"default\": \"Option3\",\r\n      \"display\": \"Select one option\",\r\n      \"name\": \"select\",\r\n      \"required\": true,\r\n      \"type\": \"select\",\r\n      \"values\": [\"Option1\", \"Option2\", \"Option3\", \"Option4\"]\r\n    },\r\n    {\r\n      \"dataSource\": \"group-of-subsections\",\r\n      \"default\": [\"Option2\"],\r\n      \"display\": \"Choose multiple subsections\",\r\n      \"multiple\": true,\r\n      \"name\": \"subsections\",\r\n      \"required\": true,\r\n      \"type\": \"select\",\r\n      \"useFirstAsDefault\": true,\r\n      \"values\": [\"Option1\", \"Option2\", \"Option3\"]\r\n    }\r\n  ]\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"display": "Network Section",
+			"description": "Example - Row",
+			"dataSource": "networks",
+			"isExtendable": true,
+			"limitMaxSubsections": "10",
+			"name": "Network",
+			"subSections": [
+				{
+					"ShouldBeDeleted": true,
+					"default": {
+						"flipper": true,
+						"number": 40,
+						"select": "Option1",
+						"subsections": "Option2"
+					},
+					"description": "This is the first subsection",
+					"display": "Network-1",
+					"name": "Network-1"
+				},
+				{
+					"ShouldBeDeleted": true,
+					"default": {
+						"flipper": true,
+						"number": 40,
+						"select": "Option2",
+						"subsections": "Option3"
+					},
+					"description": "This is the second subsection",
+					"display": "Network-2",
+					"name": "Network-2"
+				}
+			],
+			"subsectionTemplateFields": [
+				{
+					"default": false,
+					"display": "Flipper",
+					"name": "flipper",
+					"type": "boolean"
+				},
+				{
+					"default": 3,
+					"display": "Choose a Number",
+					"name": "number",
+					"required": true,
+					"restrictions": {
+						"max": 50,
+						"min": 0
+					},
+					"type": "number"
+				},
+				{
+					"default": "Option1",
+					"display": "Select one option",
+					"name": "select",
+					"required": true,
+					"type": "select",
+					"values": ["Option1", "Option2", "Option3", "Option4"]
+				},
+				{
+					"dataSource": "group-of-subsections",
+					"default": "Option1",
+					"display": "Choose multiple subsections",
+					"multiple": true,
+					"name": "subsections",
+					"required": true,
+					"type": "select",
+					"useFirstAsDefault": true,
+					"values": ["Option1", "Option2", "Option3"]
+				}
+			]
+		},
+		{
+			"display": "Groups Section",
+			"description": "Example - Column",
+			"dataSource": "groups",
+			"isExtendable": true,
+			"limitMaxSubsections": "10",
+			"name": "Group",
+			"subSections": [
+				{
+					"ShouldBeDeleted": true,
+					"default": {
+						"flipper": true,
+						"number": 40,
+						"select": "Option1",
+						"subsections": "Option3"
+					},
+					"description": "This is the first subsection",
+					"display": "Group-1",
+					"name": "Group-1"
+				},
+				{
+					"ShouldBeDeleted": true,
+					"default": {
+						"flipper": true,
+						"number": 40,
+						"select": "Option1",
+						"subsections": "Option2"
+					},
+					"description": "This is the first subsection",
+					"display": "Group-2",
+					"name": "Group-2"
+				}
+			],
+			"subsectionTemplateFields": [
+				{
+					"default": false,
+					"display": "Flipper",
+					"name": "flipper",
+					"type": "boolean"
+				},
+				{
+					"default": 3,
+					"display": "Choose a Number",
+					"name": "number",
+					"required": true,
+					"restrictions": {
+						"max": 50,
+						"min": 0
+					},
+					"type": "number"
+				},
+				{
+					"default": "Option3",
+					"display": "Select one option",
+					"name": "select",
+					"required": true,
+					"type": "select",
+					"values": ["Option1", "Option2", "Option3", "Option4"]
+				},
+				{
+					"dataSource": "group-of-subsections",
+					"default": "Option2",
+					"display": "Choose multiple subsections",
+					"multiple": true,
+					"name": "subsections",
+					"required": true,
+					"type": "select",
+					"useFirstAsDefault": true,
+					"values": ["Option1", "Option2", "Option3"]
+				}
+			]
+		}
+	]
+}

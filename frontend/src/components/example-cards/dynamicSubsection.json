@@ -1,0 +1,112 @@
+{
+	"name": "dynamicSubsection",
+	"display": "Dynamic Subsections",
+	"description": "Section that includes a mutable number of subsections, driven from a subsection template",
+	"sections": [
+		{
+			"name": "section_setup",
+			"display": "Example Section Setup",
+			"description": "Options and instructions",
+			"subSections": [
+				{
+					"name": "section_setup_sub",
+					"display": "Dynamic Subsection Setup:",
+					"fields": [
+						{
+							"data": "Section structure:\n⦿display – section display name\n⦿description – section description, appear under display name\n⦿dataSource – section alias name that can be used to extract list of it's subsections, use case can be found at Source Code -> subsectionTemplateFields -> 'subsections' field\n⦿isExtendable – when true additional sections can be created using the + sign\n⦿ limitMaxSubsections – defines the max number of subsections\n⦿name – section unique name\n⦿subSections – list of predefined sections\n⦿subsectionTemplateFields– list of ordered fields that defines new sections view",
+							"display": "Dynamic Section Structure",
+							"name": "section_structure",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"data": "Predefined subsection properties:\n⦿ ShouldBeDeleted– default value - false, when set to true subsection becomes mandatory \n⦿default – set default values for subsection's fields, undefined fields shall get their values from subsectionTemplateFields\n⦿name – subsection unique name\n⦿display – subsection display name\n ⦿description – subsection description, appears under display name\n\nNotice: predefined subsections are defined under 'subSections' ",
+							"display": "Dynamic Subsection Properties",
+							"name": "dynamic_subsection_properties",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"name": "select_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n    \"display\": \"Example Section\",\r\n    \"description\": \"\",\r\n    \"dataSource\": \"group-of-subsections\",\r\n    \"isExtendable\": true,\r\n    \"limitMaxSubsections\": \"10\",\r\n    \"name\": \"Subection\",\r\n    \"subSections\": [\r\n    {\r\n      \"ShouldBeDeleted\": false,\r\n      \"default\": {\r\n        \"flipper\": true,\r\n        \"number\": 40,\r\n        \"select\": \"option1\",\r\n        \"subsections\": []\r\n      },\r\n      \"description\": \"This is the first subsection\",\r\n      \"display\": \"Subection-1\",\r\n      \"name\": \"Subection-1\"\r\n    },\r\n    {\r\n      \"ShouldBeDeleted\": true,\r\n      \"default\": {\r\n        \"flipper\": false,\r\n        \"number\": 20,\r\n        \"select\": \"option2\",\r\n        \"subsections\": []\r\n      },\r\n      \"description\": \"This is the second subsection\",\r\n      \"display\": \"Subection-2\",\r\n      \"name\": \"Subection-2\"\r\n    }],\r\n    \"subsectionTemplateFields\": [\r\n        {\r\n          \"default\": false,\r\n          \"display\": \"Flipper\",\r\n          \"name\": \"flipper\",\r\n          \"type\": \"boolean\"\r\n        }, \r\n        {\r\n          \"default\": 3,\r\n          \"display\": \"Choose a Number\",\r\n          \"name\": \"number\",\r\n          \"required\": true,\r\n          \"restrictions\": {\r\n            \"max\": 50,\r\n            \"min\": 0\r\n          },\r\n          \"type\": \"number\"\r\n        },\r\n        {\r\n          \"default\": \"option1\",\r\n          \"display\": \"Select one option\",\r\n          \"name\": \"select\",\r\n          \"required\": true,\r\n          \"type\": \"select\",\r\n          \"values\": [\"option1\", \"option2\", \"option3\", \"option4\"]\r\n        }, \r\n        {\r\n          \"dataSource\": \"group-of-subsections\",\r\n          \"default\": \"\",\r\n          \"display\": \"Choose multiple subsections\",\r\n          \"multiple\": true,\r\n          \"name\": \"subsections\",\r\n          \"required\": true,\r\n          \"type\": \"select\",\r\n          \"useFirstAsDefault\": true,\r\n          \"values\": []\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"display": "Example Section",
+			"description": "",
+			"dataSource": "group-of-subsections",
+			"isExtendable": true,
+			"limitMaxSubsections": "10",
+			"name": "Subection",
+			"subSections": [
+				{
+					"ShouldBeDeleted": false,
+					"default": {
+						"flipper": true,
+						"number": 40,
+						"select": "option1",
+						"subsections": []
+					},
+					"description": "This is the first subsection",
+					"display": "Subection-1",
+					"name": "Subection-1"
+				},
+				{
+					"ShouldBeDeleted": true,
+					"default": {
+						"flipper": false,
+						"number": 20,
+						"select": "option2",
+						"subsections": []
+					},
+					"description": "This is the second subsection",
+					"display": "Subection-2",
+					"name": "Subection-2"
+				}
+			],
+			"subsectionTemplateFields": [
+				{
+					"default": false,
+					"display": "Flipper",
+					"name": "flipper",
+					"type": "boolean"
+				},
+				{
+					"default": 3,
+					"display": "Choose a Number",
+					"name": "number",
+					"required": true,
+					"restrictions": {
+						"max": 50,
+						"min": 0
+					},
+					"type": "number"
+				},
+				{
+					"default": "option1",
+					"display": "Select one option",
+					"name": "select",
+					"required": true,
+					"type": "select",
+					"values": ["option1", "option2", "option3", "option4"]
+				},
+				{
+					"dataSource": "group-of-subsections",
+					"default": "",
+					"display": "Choose multiple subsections",
+					"multiple": true,
+					"name": "subsections",
+					"required": true,
+					"type": "select",
+					"useFirstAsDefault": true,
+					"values": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,91 @@
+{
+	"name": "dependentList",
+	"display": "Dependent List",
+	"description": "List of items, defined according to selected option",
+	"sections": [
+		{
+			"name": "DependentList",
+			"display": "Dependent List",
+			"description": "Dependent List Options",
+			"subSections": [
+				{
+					"name": "DependentList_Sub1",
+					"display": "Dependent List field:",
+					"fields": [
+						{
+							"data": "Dpenedent List Properties:\n⦿help - explain input pattern and purpose. can be displayed on ❔ button click\n⦿default - Initial state of the dependent list\n⦿readonly – disable add and select operations, field state set according to its default value\n⦿required – when set to true, input must be provided (empty list or select-option are not allowed) \n⦿validation - a regular expression that input must obey\n⦿showIf - reveal/hide fields according to switch state, for more information go to the ShowIf example",
+							"display": "Dependent List properties",
+							"name": "info_msg",
+							"severity": "info",
+							"type": "message"
+						},
+						{
+							"display": "Dependent List (Mandatory)",
+							"help": "Field is mandatory - list should contain at least one item and select option should be set, validation - only iteams that obay ^[A-Za-z0-9._-]+$ reg expression can be added.",
+							"default": {
+								"collection": ["a"],
+								"value": "option1"
+							},
+							"readonly": false,
+							"required": true,
+							"name": "requireddependentListItem",
+							"type": "dependent-list",
+							"values": {
+								"option1": ["c", "d"],
+								"option2": ["e", "f"],
+								"option3": ["g", "h"]
+							},
+							"validation": "^[A-Za-z0-9._-]+$",
+							"textPlaceholder": "Add New Item"
+						},
+						{
+							"display": "Dependent List (Not Mandatory)",
+							"help": "Field is not mandatory - list and select option can be empty.",
+							"default": {
+								"collection": ["a", "b"],
+								"value": "option1"
+							},
+							"readonly": false,
+							"name": "notRequirednotDependentListItem",
+							"required": false,
+							"type": "dependent-list",
+							"values": {
+								"option1": ["c", "d"],
+								"option2": ["e", "f"],
+								"option3": ["g", "h"]
+							},
+							"textPlaceholder": "Add New Item",
+							"showIf": {
+								"parentName": "requireddependentListItem",
+								"parentValue": ["option1", "option2"]
+							}
+						},
+						{
+							"display": "Dependent List (Readonly Predefined)",
+							"help": "Field is not mutable, values are according to default (predefined parameters).",
+							"default": {
+								"collection": ["a", "b"],
+								"value": "option2"
+							},
+							"readonly": true,
+							"name": "readonlyDependentListItem",
+							"required": true,
+							"type": "dependent-list",
+							"values": {
+								"option1": ["c", "d"],
+								"option2": ["e", "f"],
+								"option3": ["g", "h"]
+							}
+						},
+						{
+							"name": "editor_json",
+							"display": "Source Code",
+							"type": "editor",
+							"default": "{\r\n  \"display\": \"Dependent List (Mandatory)\",\r\n  \"help\": \"Field is mandatory - list should contain at least one item and select option should be set, validation - only iteams that obay ^[A-Za-z0-9._-]+$ reg expression can be added.\",\r\n  \"default\": {\r\n    \"collection\": [\"a\"],\r\n    \"value\": \"option1\"\r\n  },\r\n  \"readonly\": false,\r\n  \"required\": true,\r\n  \"name\": \"requireddependentListItem\",\r\n  \"type\": \"dependent-list\",\r\n  \"values\": {\r\n    \"option1\": [\"c\", \"d\"],\r\n    \"option2\": [\"e\", \"f\"],\r\n    \"option3\": [\"g\", \"h\"]\r\n  },\r\n  \"validation\": \"^[A-Za-z0-9._-]+$\",\r\n  \"textPlaceholder\": \"Add New Item\"\r\n},\r\n{\r\n  \"display\": \"Dependent List (Not Mandatory)\",\r\n  \"help\": \"Field is not mandatory - list and select option can be empty.\",\r\n  \"default\": {\r\n    \"collection\": [\"a\", \"b\"],\r\n    \"value\": \"option1\"\r\n  },\r\n  \"readonly\": false,\r\n  \"name\": \"notRequirednotDependentListItem\",\r\n  \"required\": false,\r\n  \"type\": \"dependent-list\",\r\n  \"values\": {\r\n    \"option1\": [\"c\", \"d\"],\r\n    \"option2\": [\"e\", \"f\"],\r\n    \"option3\": [\"g\", \"h\"]\r\n  },\r\n  \"textPlaceholder\": \"Add New Item\",\r\n  \"showIf\": {\r\n    \"parentName\": \"requireddependentListItem\",\r\n    \"parentValue\": [\"option1\", \"option2\"]\r\n  }\r\n},\r\n{\r\n  \"display\": \"Dependent List (Readonly Predefined)\",\r\n  \"help\": \"Field is not mutable, values are according to default (predefined parameters).\",\r\n  \"default\": {\r\n    \"collection\": [\"a\", \"b\"],\r\n    \"value\": \"option2\"\r\n  },\r\n  \"readonly\": true,\r\n  \"name\": \"readonlyDependentListItem\",\r\n  \"required\": true,\r\n  \"type\": \"dependent-list\",\r\n  \"values\": {\r\n    \"option1\": [\"c\", \"d\"],\r\n    \"option2\": [\"e\", \"f\"],\r\n    \"option3\": [\"g\", \"h\"]\r\n  }\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
