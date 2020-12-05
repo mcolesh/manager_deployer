@@ -1,11 +1,14 @@
-FROM node:12.18.2
+FROM python:3
+
+# We copy just the requirements.txt first to leverage Docker cache
+COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-COPY ./package.json /app/package.json
-COPY ./package-lock.json /app/package-lock.json
-RUN npm ci
+COPY . /app
 
-COPY . .
+RUN pip install -r requirements.txt
 
-CMD ["node", "server.js"]
+ENTRYPOINT [ "python" ]
+
+CMD [ "app.py" ]

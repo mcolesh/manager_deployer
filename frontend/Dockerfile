@@ -1,21 +1,18 @@
 FROM node:12.18.2 as build
 
-ARG REACT_APP_SERVICES_HOST=/services/m
-
 WORKDIR /app
 
-COPY ./package.json /app/package.json
-COPY ./package-lock.json /app/package-lock.json
+# COPY ./package.json /app/package.json
+# COPY ./package-lock.json /app/package-lock.json
 
-RUN npm config set registry https://repo.lab.pl.alcatel-lucent.com/api/npm/npm-remote
-RUN npm config set @nokia-csf-uxr:registry https://repo.lab.pl.alcatel-lucent.com/api/npm/csf-npm-delivered
+# RUN npm config set registry https://repo.lab.pl.alcatel-lucent.com/api/npm/npm-remote
+# RUN npm config set @nokia-csf-uxr:registry https://repo.lab.pl.alcatel-lucent.com/api/npm/csf-npm-delivered
 
-RUN yarn install
+# RUN yarn install
 
 COPY . .
 
-RUN yarn build
-
+# RUN yarn build
 
 FROM nginx
 
