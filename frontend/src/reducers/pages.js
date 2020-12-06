@@ -5,12 +5,11 @@ import { DEFAULT_MAX_LOG_SIZE } from 'constants/app-constants';
 
 const initialState = {
 	pages: [],
-	pagesStates: new Map(),
-	debug: false,
+	pagesStatus: new Map(),
+	fetchPagesStatusSuccess: false,
 	successfulDeployment: false,
 	deployedWizardName: '',
 	selectedCategoryIndex: 0,
-	confirmationMsg: '',
 	isExamplesCategoryVisible: false,
 	isToggleActivated: false,
 	fetchPagesError: false,
@@ -29,9 +28,6 @@ const pagesReducer = handleActions(
 			return {
 				...state,
 				pages: get(`payload.pages`, action),
-				debug: get(`payload.debug`, action),
-				confirmationMsg: get(`payload.confirmationMsg`, action),
-				cbisVersion: get(`payload.version`, action),
 				fetchPagesSuccess: true
 			};
 		},
@@ -39,9 +35,29 @@ const pagesReducer = handleActions(
 			return {
 				...state,
 				categories: [],
-				debug: false,
-				confirmationMsg: '',
 				fetchPagesSuccess: false
+			};
+		},
+		[AT.FETCH_PAGES_STATUS.PENDING]: (state) => {
+			return state;
+		},
+		[AT.FETCH_PAGES_STATUS.SUCCESS]: (state, action) => {
+			const pagesStatus = new Map();
+			get('payload.pages_status', action).forEach((el) => {
+				pagesStatus.set(`${el.name}`, {
+					status: el.status,
+					display: el.display
+				});
+			});
+			return {
+				...state,
+				pagesStatus
+			};
+		},
+		[AT.FETCH_PAGES_STATUS.FAILURE]: (state) => {
+			return {
+				...state,
+				fetchPagesStatusSuccess: false
 			};
 		},
 		[AT.SUCCESSFUL_DEPLOYMENT]: (state, action) => {

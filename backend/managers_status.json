@@ -1,0 +1,24 @@
+{
+    "pages_status": [
+        {
+            "display": "PARTIAL",
+            "name": "pl_148",
+            "status": "PARTIAL"
+        },
+        {
+            "display": "NEW",
+            "name": "pl_150",
+            "status": "NEW"
+        },
+        {
+            "display": "N/A",
+            "name": "pl_151",
+            "status": "UNKNOWN"
+        },
+        {
+            "display": "SUCCESS",
+            "name": "pl_152",
+            "status": "SUCCESS"
+        }
+    ]
+}

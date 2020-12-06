@@ -16,7 +16,7 @@ import {
 	setExamplesCategory as setExamplesCategoryRef,
 	checkWizardDependencies as checkWizardDependenciesRef,
 	resetWizardDependenciesParameters as resetWizardDependenciesParametersRef,
-	restartServerServicesFinished as restartServerServicesFinishedRef,
+	restartServerServicesFinished as restartServerServicesFinishedRef
 } from 'actions/wizard';
 import { clearWizardAfterDeployment } from 'actions/pages';
 import 'components/DashboardStyles.css';
@@ -45,9 +45,10 @@ export class Dashboard extends Component {
 	}
 
 	componentDidMount() {
-		const { fetchPages, fetchUserInfo } = this.props;
-		fetchPages();
+		const { fetchUserInfo, fetchPages, fetchPagesStatus } = this.props;
 		fetchUserInfo();
+		fetchPages();
+		fetchPagesStatus();
 	}
 
 	UNSAFE_componentWillReceiveProps(nextProps) {
@@ -130,6 +131,7 @@ Dashboard.propTypes = {
 	mergedData: PropTypes.shape({}),
 	prerequisitesToSendToServer: PropTypes.shape({}),
 	fetchPages: PropTypes.func,
+	fetchPagesStatus: PropTypes.func,
 	push: PropTypes.func,
 	fetchWizard: PropTypes.func,
 	fetchUserInfo: PropTypes.func
@@ -164,6 +166,7 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
 	fetchPages: pageActions.fetchPages,
+	fetchPagesStatus: pageActions.fetchPagesStatus,
 	fetchWizardPrerequisite: fetchWizardPrerequisiteRef,
 	fetchWizard: fetchWizardRef,
 	clearWizardAfterDeployment,

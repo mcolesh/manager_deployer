@@ -1,4 +1,5 @@
 const pages = require('./dashboard/pages');
+const pages_status = require('./dashboard/pages_status');
 const componentsGetComponents = require('./dashboard/components');
 const cbisInstallation = require('./categories/lifeCycleManagment/cbisInstallation');
 const barmetal = require('./categories/lifeCycleManagment/bmContainer');
@@ -14,6 +15,7 @@ const validation = require('./categories/custom-mocks/validation');
 const auth = require('./auth/auth');
 module.exports = () => ({
 	pages,
+	pages_status,
 	components_getComponents: componentsGetComponents,
 	...cbisInstallation,
 	...barmetal,

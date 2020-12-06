@@ -10,6 +10,16 @@ export const fetchPages = () => {
 	};
 };
 
+export const fetchPagesStatus = () => {
+	return {
+		type: AT.API_REQUEST,
+		payload: {
+			url: '/api/pages_status',
+			nextActionType: AT.FETCH_PAGES_STATUS
+		}
+	};
+};
+
 export const onSuccessfullyDeployed = (wizardName) => ({
 	type: AT.SUCCESSFUL_DEPLOYMENT,
 	payload: { wizardName }

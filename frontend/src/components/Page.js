@@ -31,7 +31,7 @@ const StartButtonContainer = styled.div`
 
 const StatusContainer = styled.div`
 	position: absolute;
-	bottom: 50px;
+	bottom: 22px;
 `;
 
 const LoaderContainer = styled.div`
@@ -98,6 +98,16 @@ class Page extends Component {
 		const { data, pageStatus, stateDisplay, onPageClick } = this.props;
 		const { name, display, description, deployButtonCaption } = data;
 		const status = pageStatus || '';
+		console.log(
+			'page ' +
+				name +
+				' has status of ' +
+				status +
+				'and pageStatus ' +
+				pageStatus +
+				' and display ' +
+				display
+		);
 		const stateDisplayRef = stateDisplay || status;
 		let statusIcon;
 		switch (status) {
@@ -185,8 +195,8 @@ Page.propTypes = {
 };
 
 const mapStateToProps = (state, { data }) => ({
-	pageStatus: get(`state`, get(`pagesStates`, state.pagesData).get(data.name)),
-	stateDisplay: get(`display`, get(`pagesStates`, state.pagesData).get(data.name)),
+	pageStatus: get(`status`, state.pagesData.pagesStatus.get(data.name)),
+	stateDisplay: get(`display`, state.pagesData.pagesStatus.get(data.name)),
 	isServerRebooting: isServerRebootingRef(state)
 });
 

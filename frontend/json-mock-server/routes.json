@@ -94,9 +94,10 @@
 	"/api/manager/status": "/manager_status",
 	"/api/plugins": "/plugins",
 	"/api/pages": "/pages",
+	"/api/pages_status": "/pages_status",
 	"/api/components/getComponents": "/components_getComponents",
-	"/api/manager/product_type": "/manager_product_type",
-	"/api/manager/user_info": "/manager_user_info",
+	"/api/deployer/product_type": "/manager_product_type",
+	"/api/deployer/user_info": "/manager_user_info",
 
 	"/api/ipmiFactor/is_page_dependencies_ready": "/ipmiFactor_is_page_dependencies_ready",
 	"/api/ipmiFactor/progress": "/ipmiFactor_progress",
